@@ -1,0 +1,49 @@
+<?php
+/**
+ * Custom Post Types Registration
+ *
+ * This file contains the code to register custom post types for the theme.
+ *
+ * @package lc-devtec2026
+ */
+
+/**
+ * Register custom post types for the theme.
+ *
+ * @return void
+ */
+function lc_register_post_types() {
+
+	register_post_type(
+		'project',
+		array(
+			'labels'             => array(
+				'name'               => 'Projects',
+				'singular_name'      => 'Project',
+				'add_new_item'       => 'Add New Project',
+				'edit_item'          => 'Edit Project',
+				'new_item'           => 'New Project',
+				'view_item'          => 'View Project',
+				'search_items'       => 'Search Projects',
+				'not_found'          => 'No projects found',
+				'not_found_in_trash' => 'No projects in trash',
+			),
+			'has_archive'        => false,
+			'public'             => true,
+			'publicly_queryable' => true,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'show_in_rest'       => true,
+			'menu_position'      => 26,
+			'menu_icon'          => 'dashicons-portfolio',
+			'supports'           => array( 'title', 'editor', 'thumbnail' ),
+			'capability_type'    => 'post',
+			'map_meta_cap'       => true,
+			'rewrite'            => array(
+				'slug'       => 'portfolio',
+				'with_front' => false,
+			),
+		)
+	);
+}
+add_action( 'init', 'lc_register_post_types' );

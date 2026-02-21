@@ -1,0 +1,113 @@
+.form-control {
+  font-weight: 300;
+  font-size: 0.889rem;
+}
+.form-control,
+.form-select {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  border-radius: 0;
+  padding-left: 0;
+  padding-right: 0;
+  background-color: transparent;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-bottom-color: #000;
+  box-shadow: none;
+  outline: none;
+}
+
+.form-control[type="textarea"],
+textarea.form-control {
+  resize: none;
+  overflow: hidden;
+  transition: height 0.15s ease;
+}
+
+textarea.form-control {
+  min-height: 2.25rem;
+}
+
+select.form-control {
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  border-radius: 0;
+  padding-left: 0;
+  background-color: transparent;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23666' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.25rem center;
+  background-size: 10px 6px;
+}
+
+.form-check {
+  display: flex;
+  align-items: flex-start;
+  padding-left: 0.5rem;
+}
+
+.form-check-input {
+  margin-top: 0.35rem;
+}
+.form-check-label {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.4;
+}
+
+/* ================================
+   HARD RESET: CF7 + native buttons
+   ================================ */
+
+.wpcf7 button,
+.wpcf7 button[type="submit"],
+.wpcf7 input[type="submit"] {
+  appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  border-radius: 0;
+  font: inherit;
+  color: inherit;
+}
+
+/* kill CF7 spinner */
+.wpcf7 .has-spinner::after {
+  display: none;
+}
+
+/* ================================
+   DevTec button (reassert authority)
+   ================================ */
+
+.wpcf7 button.button {
+  border-top: 2px solid var(--col-black);
+  border-bottom: 2px solid var(--col-black);
+  padding: 0.25rem 1.5rem;
+
+  display: inline-grid;
+  justify-items: center;
+
+  background: none;
+  color: var(--col-black);
+  cursor: pointer;
+
+  font-size: var(--fs-350);
+  text-transform: uppercase;
+
+  transition:
+    border-color var(--transition),
+    color var(--transition);
+}
+
+.wpcf7 button.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
