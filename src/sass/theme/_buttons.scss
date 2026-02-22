@@ -33,13 +33,16 @@
     background-color var(--transition),
     color var(--transition);
   border-radius: var(--radius-100);
+  text-align: center;
   &:hover {
     color: var(--col-dark-900);
     background-color: var(--col-primary-700);
   }
   @media (max-width: 575px) {
-    width: 100%;
-    text-align: center;
+    &:not(.nav-link) {
+      width: 100%;
+      text-align: center;
+    }
   }
 
   &.has-whatsapp-background-color {

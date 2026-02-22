@@ -362,3 +362,20 @@ document.addEventListener('DOMContentLoaded', function () {
 		<?php
 	}
 );
+
+// append items to wordpress menu mobile navigation
+add_filter(
+	'wp_nav_menu_items',
+	function ( $items, $args ) {
+		if ( $args->theme_location === 'primary_nav' ) {
+			$items .= '<li class="nav-item nav-item--cta"><a class="button button--lg" href="/contact/">Contact Us</a></li>';
+			$items .= '<li class="nav-item nav-item--cta d-sm-none"><a class="button button--lg" href="tel:' . parse_phone( get_field( 'contact_phone', 'option' ) ) . '"><i class="fa-solid fa-phone me-2"></i> Call Now</a></li>';
+			$items .= '<li class="nav-item nav-item--cta d-sm-none">' . do_shortcode( '[whatsapp_link class="button button--lg has-whatsapp-background-color" icon="true" text="WhatsApp Us"]' ) . '</li>';
+			$items .= '<li class="nav-item nav-item--cta d-sm-none"><a class="button button--lg" href="mailto:' . antispambot( get_field( 'contact_email', 'option' ) ) . '"><i class="fa-solid fa-envelope me-2"></i> Email Us</a></li>';
+			$items .= '<li class="nav-item nav-item--cta d-sm-none"><a class="button button--lg button--outline" href="/contact/">Get a Free Quote</a></li>';
+		}
+		return $items;
+	},
+	10,
+	2
+);

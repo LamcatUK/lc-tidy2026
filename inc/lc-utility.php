@@ -107,7 +107,7 @@ function whatsapp_link( $atts = array() ) {
 		$number     = ltrim( parse_phone( $phone ), '+' );
 		$site_name  = get_bloginfo( 'name' );
 		$message    = rawurlencode( "I'm contacting you from the {$site_name} website..." );
-		$icon_html  = ( 'true' === $atts['icon'] || true === $atts['icon'] ) ? '<i class="fa-brands fa-whatsapp"></i> ' : '';
+		$icon_html  = ( 'true' === $atts['icon'] || true === $atts['icon'] ) ? '<i class="fa-brands fa-whatsapp me-2"></i> ' : '';
 		$link_text  = $icon_html . wp_kses_post( $atts['text'] );
 		$class      = esc_attr( $atts['class'] );
 
