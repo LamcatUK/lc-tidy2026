@@ -42,7 +42,7 @@ defined( 'ABSPATH' ) || exit;
 					?>
 			<div class="col-12 py-4 d-flex flex-wrap justify-content-center gap-4">
 				<a class="button button--lg" href="tel:<?= parse_phone( get_field( 'contact_phone', 'option' ) ); ?>"><i class="fa-solid fa-phone me-2"></i> Call Now</a>
-				<a class="d-sm-none button button--lg has-whatsapp-background-color" href="tel:<?= parse_phone( get_field( 'contact_phone', 'option' ) ); ?>"><i class="fa-brands fa-whatsapp me-2"></i> WhatsApp Us</a>
+				<?= do_shortcode( '[whatsapp_link class="d-sm-none button button--lg has-whatsapp-background-color" icon=true text="WhatsApp Us"]') ?>
 				<a class="button button--lg" href="mailto:<?= antispambot( get_field( 'contact_email', 'option' ) ); ?>"><i class="fa-solid fa-envelope me-2"></i> Email Us</a>
 				<a class="button button--lg button--outline" href="/contact/">Get a Free Quote</a>
 			</div>
