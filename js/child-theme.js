@@ -1787,24 +1787,24 @@
 	var carouselExports = requireCarousel();
 	var carousel = /*@__PURE__*/getDefaultExportFromCjs(carouselExports);
 
-	var collapse$2 = {exports: {}};
+	var collapse$1 = {exports: {}};
 
 	/*!
 	  * Bootstrap collapse.js v5.3.8 (https://getbootstrap.com/)
 	  * Copyright 2011-2025 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
 	  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
 	  */
-	var collapse$1 = collapse$2.exports;
+	var collapse = collapse$1.exports;
 
 	var hasRequiredCollapse;
 
 	function requireCollapse () {
-		if (hasRequiredCollapse) return collapse$2.exports;
+		if (hasRequiredCollapse) return collapse$1.exports;
 		hasRequiredCollapse = 1;
 		(function (module, exports$1) {
 			(function (global, factory) {
 			  module.exports = factory(requireBaseComponent(), requireEventHandler(), requireSelectorEngine(), requireUtil()) ;
-			})(collapse$1, function (BaseComponent, EventHandler, SelectorEngine, index_js) {
+			})(collapse, function (BaseComponent, EventHandler, SelectorEngine, index_js) {
 
 			  /**
 			   * --------------------------------------------------------------------------
@@ -2039,12 +2039,12 @@
 			  index_js.defineJQueryPlugin(Collapse);
 			  return Collapse;
 			}); 
-		} (collapse$2));
-		return collapse$2.exports;
+		} (collapse$1));
+		return collapse$1.exports;
 	}
 
 	var collapseExports = requireCollapse();
-	var collapse = /*@__PURE__*/getDefaultExportFromCjs(collapseExports);
+	var Collapse = /*@__PURE__*/getDefaultExportFromCjs(collapseExports);
 
 	var dropdown$2 = {exports: {}};
 
@@ -6864,7 +6864,6 @@
 	})();
 
 	// Add your custom JS here.
-
 	AOS.init({
 	  easing: "ease-out",
 	  once: true,
@@ -6872,21 +6871,23 @@
 	});
 
 	// Close mobile nav when an in-page anchor link is clicked
-	document.querySelectorAll('#navbar a[href^="#"]').forEach(link => {
-	  link.addEventListener("click", () => {
-	    console.log("here");
-	    const navEl = document.getElementById("navbar");
-	    const bsCollapse = bootstrap.Collapse.getInstance(navEl);
-	    if (bsCollapse) {
-	      bsCollapse.hide();
-	    }
+	document.addEventListener("DOMContentLoaded", () => {
+	  const navEl = document.getElementById("navbar");
+	  if (!navEl) return;
+	  navEl.querySelectorAll("a").forEach(link => {
+	    link.addEventListener("click", () => {
+	      const href = link.getAttribute("href") || "";
+	      if (href.includes("#")) {
+	        Collapse.getOrCreateInstance(navEl).hide();
+	      }
+	    });
 	  });
 	});
 
 	exports.Alert = alert;
 	exports.Button = button;
 	exports.Carousel = carousel;
-	exports.Collapse = collapse;
+	exports.Collapse = Collapse;
 	exports.Dropdown = dropdown;
 	exports.Modal = modal;
 	exports.Offcanvas = offcanvas;
