@@ -22711,9 +22711,18 @@ footer .colophon a {
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   background-color: var(--col-white);
   color: var(--col-black);
+  overflow-x: hidden;
+}
+
+main > section,
+main > div {
   overflow-x: hidden;
 }
 

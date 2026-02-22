@@ -100,14 +100,14 @@ defined( 'ABSPATH' ) || exit;
 	itemtype="http://schema.org/WebSite">
 	<nav class="navbar navbar-expand-lg p-0" aria-label="Main Navigation">
 		<div class="container">
-			<div class="d-flex justify-content-between w-100 w-lg-auto align-items-center py-2">
-				<div class="logo-container d-flex align-items-center"><a href="/" class="logo navbar-brand" aria-label="Tidy Solutions Homepage"></a></div>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-					data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<i class="fas fa-bars"></i>
-				</button>
+			<div class="logo-container d-flex align-items-center py-2">
+				<a href="/" class="logo navbar-brand" aria-label="Tidy Solutions Homepage"></a>
 			</div>
+			<button class="navbar-toggler py-2" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<i class="fas fa-bars"></i>
+			</button>
 			<div id="navbar" class="collapse navbar-collapse">
 				<?php
 				wp_nav_menu(

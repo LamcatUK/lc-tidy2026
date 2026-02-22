@@ -7,9 +7,19 @@
 @import "forms";
 @import "blocks/blocks";
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   background-color: var(--col-white);
   color: var(--col-black);
+  overflow-x: hidden;
+}
+
+// Prevent Bootstrap gx-* negative margins from causing horizontal scroll
+main > section,
+main > div {
   overflow-x: hidden;
 }
 
