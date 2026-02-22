@@ -30,7 +30,7 @@ defined( 'ABSPATH' ) || exit;
 				<p class="how-it-works__text has-400-font-size has-light-800-color mb-0"><?= esc_html( get_field( 'step_3_content' ) ); ?></p>
 			</div>
 		</div>
-		<div class="has-primary-500-background-color has-dark-900-text py-2 has-600-font-size text-center mt-4 text-uppercase fw-semibold" data-aos="fade" data-aos-delay="300">
+		<div class="has-primary-500-background-color has-dark-900-text py-2 has-600-font-size text-center mt-4 text-uppercase fw-semibold text-balance" data-aos="fade" data-aos-delay="300">
 			<?= esc_html( get_field( 'highlight' ) ); ?>
 		</div>
 	</div>
