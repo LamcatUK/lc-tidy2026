@@ -22250,8 +22250,8 @@ header .logo {
   max-width: 100%;
   padding-block: 0;
   background-image: url(../img/tidy-horizontal--dk.svg);
-  aspect-ratio: 300/83;
   height: 50px;
+  width: 181px;
 }
 header .current_page_item > .nav-link,
 header .current_menu_item > .nav-link,
