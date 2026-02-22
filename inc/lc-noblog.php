@@ -2,7 +2,7 @@
 /**
  * Disable Blog Functionality
  *
- * @package lc-devtec2026
+ * @package lc-tidy2026
  */
 
 defined( 'ABSPATH' ) || exit;

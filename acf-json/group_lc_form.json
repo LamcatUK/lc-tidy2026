@@ -1,10 +1,10 @@
 {
-    "key": "group_lc_image_gallery",
-    "title": "LC Image Gallery",
+    "key": "group_lc_form",
+    "title": "LC Form",
     "fields": [
         {
-            "key": "field_lc_image_gallery_title",
-            "label": "LC Image Gallery",
+            "key": "field_lc_form_title",
+            "label": "LC Form",
             "name": "",
             "aria-label": "",
             "type": "message",
@@ -21,11 +21,11 @@
             "new_lines": "wpautop"
         },
         {
-            "key": "field_69877e0d5ff0d",
-            "label": "Project Images",
-            "name": "project_gallery",
+            "key": "field_699b3d6117b93",
+            "label": "Contact Form ID",
+            "name": "contact_form_id",
             "aria-label": "",
-            "type": "gallery",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -34,19 +34,12 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "id",
-            "library": "all",
-            "min": "",
-            "max": "",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "insert": "append",
-            "preview_size": "thumbnail"
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -54,7 +47,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/lc-image-gallery"
+                "value": "acf\/lc-form"
             }
         ]
     ],
@@ -67,5 +60,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1770487329
+    "display_title": "",
+    "modified": 1771781484
 }

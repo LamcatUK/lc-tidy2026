@@ -6863,6 +6863,14 @@
 	  }
 	})();
 
+	// Add your custom JS here.
+
+	AOS.init({
+	  easing: "ease-out",
+	  once: true,
+	  duration: 500
+	});
+
 	exports.Alert = alert;
 	exports.Button = button;
 	exports.Carousel = carousel;

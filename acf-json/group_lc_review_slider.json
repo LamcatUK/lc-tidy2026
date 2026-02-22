@@ -1,10 +1,10 @@
 {
-  "key": "group_lc_contact_block",
-  "title": "LC Contact Block",
+  "key": "group_lc_review_slider",
+  "title": "LC Review Slider",
   "fields": [
     {
-      "key": "field_lc_contact_block_title",
-      "label": "LC Contact Block",
+      "key": "field_lc_review_slider_title",
+      "label": "LC Review Slider",
       "name": "title",
       "type": "message"
     }
@@ -14,7 +14,7 @@
       {
         "param": "block",
         "operator": "==",
-        "value": "acf/lc-contact-block"
+        "value": "acf/lc-review-slider"
       }
     ]
   ],

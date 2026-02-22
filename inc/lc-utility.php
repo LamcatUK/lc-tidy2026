@@ -5,7 +5,7 @@
  * This file contains various utility functions used throughout the theme,
  * including phone parsing, shortcodes, social media integrations, and more.
  *
- * @package lc-devtec2026
+ * @package lc-tidy2026
  * @since 1.0.0
  */
 
@@ -76,6 +76,45 @@ function contact_phone( $atts = array() ) {
 	}
 }
 add_shortcode( 'contact_phone', 'contact_phone' );
+
+/**
+ * Generate a WhatsApp link shortcode using the contact phone number.
+ *
+ * Pre-fills the WhatsApp message with "I'm contacting you from the [site name] website..."
+ *
+ * @param array $atts {
+ *     Optional. Shortcode attributes.
+ *
+ *     @type string $class CSS class for the anchor element. Default empty.
+ *     @type string $text  Custom link text to display. Default 'WhatsApp Us'.
+ *     @type bool   $icon  Whether to show WhatsApp icon. Default false.
+ * }
+ * @return string|null HTML anchor tag with WhatsApp link or null if no phone is set.
+ */
+function whatsapp_link( $atts = array() ) {
+	$atts = shortcode_atts(
+		array(
+			'class' => '',
+			'text'  => 'WhatsApp Us',
+			'icon'  => false,
+		),
+		$atts,
+		'whatsapp_link'
+	);
+
+	if ( get_field( 'contact_phone', 'options' ) ) {
+		$phone      = get_field( 'contact_phone', 'options' );
+		$number     = ltrim( parse_phone( $phone ), '+' );
+		$site_name  = get_bloginfo( 'name' );
+		$message    = rawurlencode( "I'm contacting you from the {$site_name} website..." );
+		$icon_html  = ( 'true' === $atts['icon'] || true === $atts['icon'] ) ? '<i class="fa-brands fa-whatsapp"></i> ' : '';
+		$link_text  = $icon_html . wp_kses_post( $atts['text'] );
+		$class      = esc_attr( $atts['class'] );
+
+		return '<a href="https://wa.me/' . esc_attr( $number ) . '?text=' . $message . '" class="' . $class . '" target="_blank" rel="noopener noreferrer">' . $link_text . '</a>';
+	}
+}
+add_shortcode( 'whatsapp_link', 'whatsapp_link' );
 
 /**
  * Generate contact email shortcode with optional icon and custom text.
@@ -406,10 +445,20 @@ add_action( 'send_headers', 'enable_strict_transport_security_hsts_header' );
 /**
  * Convert field content to an HTML list.
  *
- * @param string $field The field content to convert.
+ * @param string $field   The field content to convert.
+ * @param array  $options Optional. {
+ *     @type string $icon  HTML string prepended inside each <li>. When supplied,
+ *                         a Font Awesome-style fa-ul/fa-li structure is used and
+ *                         list bullets are suppressed. Default ''.
+ *     @type string $class CSS class(es) added to each <li>. Default ''.
+ * }
  * @return string The HTML list items.
  */
-function lc_list( $field ) {
+function lc_list( $field, array $options = array() ) {
+	$icon       = $options['icon'] ?? '';
+	$class      = $options['class'] ?? '';
+	$class_attr = $class ? ' class="' . esc_attr( $class ) . '"' : '';
+
 	ob_start();
 	$field   = strip_tags( $field, '<br />' );
 	$bullets = preg_split( "/\r\n|\n|\r/", $field );
@@ -417,9 +466,15 @@ function lc_list( $field ) {
 		if ( '' === $b ) {
 			continue;
 		}
-		?>
-<li><?php echo esc_html( $b ); ?></li>
-		<?php
+		if ( $icon ) {
+			?>
+<li<?php echo $class_attr; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>><span class="fa-li"><?php echo $icon; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span><?php echo esc_html( $b ); ?></li>
+			<?php
+		} else {
+			?>
+<li<?php echo $class_attr; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>><?php echo esc_html( $b ); ?></li>
+			<?php
+		}
 	}
 	return ob_get_clean();
 }
@@ -741,7 +796,7 @@ function lc_cf7_honeypot_form_tag_handler( $tag ) {
             </label>
             %3$s
         </span>',
-		esc_html( ! empty( $atts['message'] ) ? $atts['message'] : __( 'If you are human, leave this field blank.', 'lc-devtec2026' ) ),
+		esc_html( ! empty( $atts['message'] ) ? $atts['message'] : __( 'If you are human, leave this field blank.', 'lc-tidy2026' ) ),
 		$atts,
 		$validation_error
 	);
@@ -770,9 +825,9 @@ function lc_cf7_honeypot_validation_filter( $result, $tag ) {
 	$value = isset( $_POST[ $name ] ) ? sanitize_text_field( wp_unslash( $_POST[ $name ] ) ) : '';
 
 	if ( ! empty( $value ) ) {
-		$result->invalidate( $tag, __( 'Spam detected.', 'lc-devtec2026' ) );
+		$result->invalidate( $tag, __( 'Spam detected.', 'lc-tidy2026' ) );
 	}
 
 	return $result;
 }
-?>
+

@@ -1,18 +1,26 @@
-/* inter-300 - latin */
+/* poppins-600 - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 300;
-  src: url("../fonts/inter-v20-latin-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-/* inter-600 - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: "Inter";
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
-  src: url("../fonts/inter-v20-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("../fonts/poppins-v24-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* ibm-plex-sans-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/ibm-plex-sans-v23-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* ibm-plex-sans-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/ibm-plex-sans-v23-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 html {
@@ -33,37 +41,37 @@ h3,
 .h3,
 h4,
 .h4 {
-  font-family: var(--ff-headings);
+  font-family: var(--ff-heading);
   text-wrap: balance;
   color: var(--col-black);
 }
 
 h1,
 .h1 {
-  font-size: var(--fs-800);
+  font-size: var(--fs-900);
   line-height: var(--lh-900);
   font-style: normal;
-  font-weight: var(--fw-600);
+  font-weight: var(--fw-semibold);
 }
 
 h2,
 .h2 {
-  font-size: var(--fs-700);
-  font-weight: var(--fw-600);
+  font-size: var(--fs-800);
+  font-weight: var(--fw-semibold);
   font-style: normal;
   line-height: var(--lh-800);
 }
 h3,
 .h3 {
-  font-size: var(--fs-600);
-  font-weight: var(--fw-600);
+  font-size: var(--fs-700);
+  font-weight: var(--fw-semibold);
   line-height: var(--lh-700);
 }
 h4,
 .h4 {
-  font-size: var(--fs-500);
+  font-size: var(--fs-600);
   font-weight: var(--fw-300);
-  line-height: var(--lh-700);
+  line-height: var(--lh-600);
 }
 
 .fw-500,
@@ -133,7 +141,7 @@ strong {
 }
 
 .ff-heading {
-  font-family: var(--ff-headings);
+  font-family: var(--ff-heading);
 }
 .ff-body {
   font-family: var(--ff-body);

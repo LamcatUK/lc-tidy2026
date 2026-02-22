@@ -9,12 +9,12 @@ header {
 
   .navbar-toggler {
     i {
-      color: var(--col-accent-400);
+      color: var(--col-primary-600);
     }
   }
 
   .navbar > .container {
-    border-bottom: 1px solid var(--col-accent-400);
+    border-bottom: 3px solid var(--col-primary-600);
   }
 
   .navbar-nav {
@@ -24,11 +24,13 @@ header {
   a,
   a.nav-link {
     color: var(--col-black);
+    font-family: var(--ff-body);
     font-size: var(--fs-300);
     font-weight: var(--fw-600);
-    letter-spacing: var(--ls-900);
+    line-height: 1;
     transition: var(--transition);
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     text-decoration: none;
     text-transform: uppercase;
     padding: 0;
@@ -41,18 +43,6 @@ header {
     &:focus {
       color: var(--col-accent-400);
       text-decoration: none;
-    }
-  }
-
-  .contact-info {
-    font-size: var(--fs-300);
-    font-weight: var(--fw-300);
-    color: var(--col-accent-400);
-    a {
-      font-size: var(--fs-300);
-      font-weight: var(--fw-300);
-      color: var(--col-accent-400);
-      text-transform: initial !important;
     }
   }
 
@@ -72,10 +62,9 @@ header {
     max-width: 100%;
     padding-block: 0;
 
-    background-image: url(../img/devtec-logo.svg);
-    aspect-ratio: 176 / 48;
-    height: 48px;
-    width: 176px;
+    background-image: url(../img/tidy-horizontal--dk.svg);
+    aspect-ratio: 300 / 83;
+    height: 50px;
   }
 
   .current_page_item > .nav-link,
@@ -86,43 +75,12 @@ header {
     color: var(--col-accent-400);
   }
 
-  // @media (max-width: 991px) {
-  //   .navbar-collapse {
-  //     background: var(--col-white);
-  //     min-height: 100svh;
-  //     /* Disable Bootstrap collapse animation */
-  //     transition: none !important;
-  //     /* Do not set display:flex or height, let Bootstrap animate */
-  //   }
-
-  //   /* Disable all collapse transitions on mobile */
-  //   .collapsing {
-  //     transition: none !important;
-  //     height: auto !important;
-  //   }
-  //   .navbar-nav {
-  //     width: 100%;
-  //     padding-bottom: 2rem;
-  //   }
-  //   .nav-link,
-  //   .navbar-nav .nav-link {
-  //     font-size: var(--fs-subtle);
-  //     padding: 1rem 0;
-  //   }
-  //   .dropdown-item {
-  //     font-size: var(--fs-body);
-  //   }
-
-  //   .fs-subtle a {
-  //     font-size: var(--fs-subtle);
-  //   }
-  // }
-
   @media (min-width: 992px) {
     .navbar-expand-lg {
       padding-bottom: 0;
       .navbar-nav {
         column-gap: 3rem;
+        align-items: center;
         .nav-link {
           padding-inline: 0;
         }

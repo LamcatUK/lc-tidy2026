@@ -21,38 +21,61 @@
 }
 
 .button {
-  border-top: 2px solid var(--col-black);
-  border-bottom: 2px solid var(--col-black);
-  font-size: var(--fs-350);
+  background-color: var(--col-primary-600);
+  font-family: var(--ff-body);
+  font-size: var(--fs-300);
+  font-weight: var(--fw-semibold);
   text-transform: uppercase;
-  transition:
-    border-color var(--transition),
-    color var(--transition);
   padding: 0.25rem 1.5rem;
-  color: var(--col-black);
-  display: inline-grid;
-  justify-items: center;
-  &::before {
-    content: attr(data-text);
-    letter-spacing: calc(var(--ls-900) * 5);
-    visibility: hidden;
-    height: 0;
-    overflow: hidden;
-  }
-  span {
-    grid-area: 1 / 1;
-    letter-spacing: var(--ls-900);
-    transition: letter-spacing var(--transition);
-    white-space: nowrap;
-  }
+  color: var(--col-dark-900);
+  border: 2px solid var(--col-primary-600);
+  transition:
+    background-color var(--transition),
+    color var(--transition);
+  border-radius: var(--radius-100);
   &:hover {
-    color: var(--col-accent-400);
-    border-color: var(--col-accent-400);
-    span {
-      letter-spacing: calc(var(--ls-900) * 5);
+    color: var(--col-dark-900);
+    background-color: var(--col-primary-700);
+  }
+  @media (max-width: 575px) {
+    width: 100%;
+    text-align: center;
+  }
+
+  &.has-whatsapp-background-color {
+    border-color: var(--col-whatsapp);
+    &:hover {
+      background-color: color-mix(
+        in srgb,
+        var(--col-whatsapp),
+        var(--col-dark-900) 10%
+      ) !important;
     }
   }
 }
+
+.button--lg {
+  font-size: var(--fs-400);
+}
+.button--outline {
+  background-color: transparent;
+  border: 2px solid var(--col-dark-900);
+  &:hover {
+    background-color: var(--col-dark-900);
+    color: var(--col-white);
+  }
+}
+
+.button--outline-white {
+  background-color: transparent;
+  border: 2px solid var(--col-white);
+  color: var(--col-white);
+  &:hover {
+    background-color: var(--col-white);
+    color: var(--col-dark-900);
+  }
+}
+
 button:disabled {
   opacity: 0.5;
   cursor: not-allowed;

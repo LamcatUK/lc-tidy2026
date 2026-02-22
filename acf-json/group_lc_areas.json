@@ -1,10 +1,10 @@
 {
-    "key": "group_lc_projects",
-    "title": "LC Projects",
+    "key": "group_lc_areas",
+    "title": "LC Areas",
     "fields": [
         {
-            "key": "field_lc_projects_title",
-            "label": "LC Projects",
+            "key": "field_lc_areas_title",
+            "label": "LC Areas",
             "name": "",
             "aria-label": "",
             "type": "message",
@@ -21,7 +21,28 @@
             "new_lines": "wpautop"
         },
         {
-            "key": "field_6984f70a94e1c",
+            "key": "field_699af37502af6",
+            "label": "Title",
+            "name": "title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_699af37b02af7",
             "label": "Intro",
             "name": "intro",
             "aria-label": "",
@@ -47,7 +68,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/lc-projects"
+                "value": "acf\/lc-areas"
             }
         ]
     ],
@@ -60,5 +81,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1770321691
+    "display_title": "",
+    "modified": 1771762567
 }

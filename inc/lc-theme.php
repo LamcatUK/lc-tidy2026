@@ -4,7 +4,7 @@
  *
  * This file contains theme-specific functions and customizations for the LC Mindspace 2025 theme.
  *
- * @package lc-devtec2026
+ * @package lc-tidy2026
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -266,10 +266,14 @@ function lc_theme_enqueue() {
     // wp_enqueue_style('slick-styles', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css', array(), true);
     // wp_enqueue_style('slick-theme-styles', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css', array(), true);
     // wp_enqueue_script('slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js', array(), null, true);
-    // wp_enqueue_style('aos-style', "https://unpkg.com/aos@2.3.1/dist/aos.css", array());
-    // wp_enqueue_script('aos', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array(), null, true);
     // phpcs:enable
 	wp_deregister_script( 'jquery' );
+
+    wp_enqueue_style('aos-style', "https://unpkg.com/aos@2.3.1/dist/aos.css", array());
+    wp_enqueue_script('aos', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array(), null, true);
+
+	wp_enqueue_script( 'lenis', 'https://unpkg.com/lenis@1.3.11/dist/lenis.min.js', array(), null, true ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
+	wp_enqueue_style( 'lenis-style', 'https://unpkg.com/lenis@1.3.11/dist/lenis.css', array() ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
 
 	wp_enqueue_style( 'swiper', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css', array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
 	wp_enqueue_script( 'swiper', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js', array(), null, true ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
@@ -278,3 +282,83 @@ function lc_theme_enqueue() {
 	wp_enqueue_script('glightbox-scripts', get_stylesheet_directory_uri() . '/js/glightbox.min.js', array(), null, true);
 }
 add_action( 'wp_enqueue_scripts', 'lc_theme_enqueue' );
+
+
+/**
+ * Retrieves a child area page by its slug under the 'areas' parent page.
+ *
+ * @param string $slug The slug of the area page.
+ * @return WP_Post|null The area page post object if found, or null if not found.
+ */
+function lc_get_area_page_by_slug( string $slug ) {
+	$parent = get_page_by_path( 'areas' );
+	if ( ! $parent ) {
+		return null;
+	}
+	// get_page_by_path with parent context (WordPress doesn’t do nested path matching here),
+	// so we fetch by path "areas/{$slug}" in one go:.
+	$page = get_page_by_path( 'areas/' . $slug );
+	return $page instanceof WP_Post ? $page : null;
+}
+
+/**
+ * Renders the list of areas covered, grouped by county, using the 'area' taxonomy.
+ *
+ * Outputs HTML for each county and its areas, linking to area pages if available.
+ */
+function lc_render_areas_we_cover_from_taxonomy() {
+
+	$areas = get_terms(
+		array(
+			'taxonomy'   => 'area',
+			'parent'     => 0,
+			'hide_empty' => false,
+			'orderby'    => 'name',
+			'order'      => 'ASC',
+		)
+	);
+
+	if ( is_wp_error( $areas ) || empty( $areas ) ) {
+		return;
+	}
+
+	echo '<ul class="areas__list">';
+
+	foreach ( $areas as $term ) {
+		$slug = $term->slug;
+		$page = lc_get_area_page_by_slug( $slug );
+
+		echo '<li class="areas__item">';
+		if ( $page ) {
+			echo '<a class="areas__link" href="' . esc_url( get_permalink( $page->ID ) ) . '">'
+				. esc_html( $term->name ) . '</a>';
+		} else {
+			echo '<span class="areas__text">' . esc_html( $term->name ) . '</span>';
+		}
+		echo '</li>';
+	}
+
+	echo '</ul>';
+}
+
+add_action(
+	'wp_footer',
+	function () {
+		?>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+	if (typeof Lenis === 'undefined') return;
+	const lenis = new Lenis({
+		smooth: true,
+		lerp: 0.1
+	});
+	function raf(time) {
+		lenis.raf(time);
+		requestAnimationFrame(raf);
+	}
+	requestAnimationFrame(raf);
+});
+</script>
+		<?php
+	}
+);

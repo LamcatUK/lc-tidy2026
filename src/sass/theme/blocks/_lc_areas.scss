@@ -1,0 +1,99 @@
+// .areas {
+//   background-color: var(--col-light-warm-400);
+//   &__list {
+//     list-style: none;
+//     margin: 0;
+//     padding: 0;
+//     font-size: var(--fs-500);
+//     font-weight: var(--fw-medium);
+//     line-height: var(--lh-500);
+//     letter-spacing: 0.02em;
+
+//     display: grid;
+//     grid-template-columns: 1fr 1fr;
+//     column-gap: 56px;
+//     row-gap: 8px;
+//   }
+//   &__item {
+//     position: relative;
+//     padding-left: 14px;
+//     display: flex;
+//     align-items: center;
+//     gap: 10px;
+
+//     &::before {
+//       content: "";
+//       background: #ddfd01;
+//       border: 2px solid #000;
+//       width: 12px;
+//       height: 12px;
+//       border-radius: 50%;
+//       display: inline-block;
+//       // margin-right: 10px;
+//     }
+//   }
+
+//   &__map {
+//     max-height: 270px;
+//   }
+// }
+
+.areas {
+  background: var(--col-light-warm-400);
+  .container {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  &__map {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    height: 110%;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0;
+    @media (min-width: 768px) {
+      opacity: 0.65;
+      transform: translate(-0%, -50%); /* push it slightly off canvas */
+    }
+    @media (min-width: 992px) {
+      transform: translate(-55%, -50%); /* push it slightly off canvas */
+    }
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: var(--fs-600);
+    font-weight: var(--fw-medium);
+    line-height: var(--lh-500);
+    letter-spacing: 0.02em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding-left: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &::before {
+      content: "";
+      background: #ddfd01;
+      border: 2px solid #000;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+      // margin-right: 10px;
+    }
+  }
+}

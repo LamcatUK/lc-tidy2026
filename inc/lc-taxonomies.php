@@ -4,7 +4,7 @@
  *
  * This file defines and registers custom taxonomies.
  *
- * @package lc-devtec2026
+ * @package lc-tidy2026
  */
 
 /**
@@ -14,17 +14,13 @@
  */
 function lc_register_taxes() {
 
-	// phpcs:disable
-	// Example: Uncomment and modify as needed.
-
-	/*
 	$args = array(
 		'labels'             => array(
-			'name'          => 'Categories',
-			'singular_name' => 'Category',
+			'name'          => 'Areas',
+			'singular_name' => 'Area',
 		),
-		'public'             => true,
-		'publicly_queryable' => true,
+		'public'             => false,
+		'publicly_queryable' => false,
 		'hierarchical'       => true,
 		'show_ui'            => true,
 		'show_in_nav_menus'  => true,
@@ -34,8 +30,6 @@ function lc_register_taxes() {
 		'show_in_rest'       => true,
 		'rewrite'            => false,
 	);
-	register_taxonomy( 'custom_category', array( 'post' ), $args );
-	*/
-	// phpcs:enable
+	register_taxonomy( 'area', array( 'page' ), $args );
 }
 add_action( 'init', 'lc_register_taxes' );

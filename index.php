@@ -2,7 +2,7 @@
 /**
  * The main template file
  *
- * @package lc-devtec2026
+ * @package lc-tidy2026
  */
 
 defined( 'ABSPATH' ) || exit;

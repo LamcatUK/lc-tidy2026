@@ -1,10 +1,10 @@
 {
-    "key": "group_lc_text_accordion",
-    "title": "LC Text Accordion",
+    "key": "group_lc_service_cards",
+    "title": "LC Service Cards",
     "fields": [
         {
-            "key": "field_lc_text_accordion_title",
-            "label": "LC Text Accordion",
+            "key": "field_lc_service_cards_title",
+            "label": "LC Service Cards",
             "name": "",
             "aria-label": "",
             "type": "message",
@@ -21,51 +21,9 @@
             "new_lines": "wpautop"
         },
         {
-            "key": "field_6983b295be673",
-            "label": "Title",
-            "name": "title",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_6983b29dbe674",
-            "label": "Content",
-            "name": "content",
-            "aria-label": "",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "allow_in_bindings": 0,
-            "tabs": "all",
-            "toolbar": "basic",
-            "media_upload": 0,
-            "delay": 1
-        },
-        {
-            "key": "field_6983b2b9be675",
-            "label": "Accordion",
-            "name": "accordion",
+            "key": "field_6999e36fd07dc",
+            "label": "Services",
+            "name": "services",
             "aria-label": "",
             "type": "repeater",
             "instructions": "",
@@ -76,7 +34,7 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "block",
+            "layout": "table",
             "pagination": 0,
             "min": 0,
             "max": 0,
@@ -85,7 +43,34 @@
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_6983b2c1be676",
+                    "key": "field_6999e378d07dd",
+                    "label": "Icon",
+                    "name": "icon",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "svg",
+                    "allow_in_bindings": 0,
+                    "preview_size": "thumbnail",
+                    "parent_repeater": "field_6999e36fd07dc"
+                },
+                {
+                    "key": "field_6999e388d07de",
                     "label": "Title",
                     "name": "title",
                     "aria-label": "",
@@ -104,12 +89,12 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "parent_repeater": "field_6983b2b9be675"
+                    "parent_repeater": "field_6999e36fd07dc"
                 },
                 {
-                    "key": "field_6983b2c8be677",
-                    "label": "Content",
-                    "name": "content",
+                    "key": "field_6999e390d07df",
+                    "label": "Text",
+                    "name": "text",
                     "aria-label": "",
                     "type": "textarea",
                     "instructions": "",
@@ -123,10 +108,10 @@
                     "default_value": "",
                     "maxlength": "",
                     "allow_in_bindings": 0,
-                    "rows": 4,
+                    "rows": "",
                     "placeholder": "",
-                    "new_lines": "br",
-                    "parent_repeater": "field_6983b2b9be675"
+                    "new_lines": "",
+                    "parent_repeater": "field_6999e36fd07dc"
                 }
             ]
         }
@@ -136,7 +121,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/lc-text-accordion"
+                "value": "acf\/lc-service-cards"
             }
         ]
     ],
@@ -149,5 +134,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1770238682
+    "display_title": "",
+    "modified": 1771692957
 }

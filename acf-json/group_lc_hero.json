@@ -63,23 +63,6 @@
             "append": ""
         },
         {
-            "key": "field_6983abf8606d4",
-            "label": "Link",
-            "name": "link",
-            "aria-label": "",
-            "type": "link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "allow_in_bindings": 0
-        },
-        {
             "key": "field_6983ac05b7cb0",
             "label": "Image",
             "name": "image",
@@ -124,5 +107,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1770236949
+    "display_title": "",
+    "modified": 1771690631
 }

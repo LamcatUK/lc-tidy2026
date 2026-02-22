@@ -1,0 +1,58 @@
+.service-cards {
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1200px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  // On 2- and 4-col layouts, align rows across cards with subgrid
+  @media (min-width: 992px) {
+    &__grid {
+      // 3 row tracks repeated per grid row: icon | title | text
+      grid-auto-rows: 80px minmax(3.5rem, auto) 1fr;
+    }
+
+    .service-card {
+      display: grid;
+      grid-row: span 3;
+      grid-template-rows: subgrid;
+    }
+  }
+
+  .service-card {
+    background-color: var(--col-dark-700);
+    border: 1px solid var(--col-dark-500);
+    border-radius: var(--radius-100);
+    padding: 1.5rem;
+    display: grid;
+    grid-template-rows: 80px minmax(3.5rem, auto) 1fr;
+
+    &__icon-wrapper {
+      height: 75px;
+      display: flex;
+      align-items: center;
+    }
+
+    &__icon {
+      aspect-ratio: 98 / 76;
+      width: 90px;
+      margin-bottom: 0.5rem;
+    }
+
+    &__title {
+      align-self: start;
+    }
+
+    &__text {
+      align-self: start;
+    }
+  }
+}

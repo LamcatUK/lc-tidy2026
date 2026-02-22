@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single projects
  *
- * @package lc-devtec2026
+ * @package lc-tidy2026
  */
 
 defined( 'ABSPATH' ) || exit;

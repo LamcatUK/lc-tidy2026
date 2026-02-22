@@ -1,11 +1,29 @@
 {
-    "key": "group_6987716f6593a",
-    "title": "Project Detail",
+    "key": "group_lc_text_checklist",
+    "title": "LC Text Checklist",
     "fields": [
         {
-            "key": "field_6987717058e39",
-            "label": "Location",
-            "name": "location",
+            "key": "field_lc_text_checklist_title",
+            "label": "LC Text Checklist",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "esc_html": 0,
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_6999da93e59ef",
+            "label": "Title",
+            "name": "title",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -24,11 +42,11 @@
             "append": ""
         },
         {
-            "key": "field_6987717c58e3a",
-            "label": "GDV",
-            "name": "gdv",
+            "key": "field_6999da9ae59f0",
+            "label": "Intro",
+            "name": "intro",
             "aria-label": "",
-            "type": "text",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -40,17 +58,17 @@
             "default_value": "",
             "maxlength": "",
             "allow_in_bindings": 0,
+            "rows": "",
             "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "new_lines": "br"
         },
         {
-            "key": "field_6987725f31d73",
-            "label": "Area",
-            "name": "area",
+            "key": "field_6999daa7e59f1",
+            "label": "Checklist",
+            "name": "checklist",
             "aria-label": "",
-            "type": "text",
-            "instructions": "",
+            "type": "textarea",
+            "instructions": "One item per line",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -61,17 +79,17 @@
             "default_value": "",
             "maxlength": "",
             "allow_in_bindings": 0,
+            "rows": 6,
             "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "new_lines": "br"
         }
     ],
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "block",
                 "operator": "==",
-                "value": "project"
+                "value": "acf\/lc-text-checklist"
             }
         ]
     ],
@@ -84,5 +102,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1770484323
+    "display_title": "",
+    "modified": 1771690681
 }

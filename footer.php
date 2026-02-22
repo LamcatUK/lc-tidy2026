@@ -2,7 +2,7 @@
 /**
  * The template for displaying the footer
  *
- * @package lc-devtec2026
+ * @package lc-tidy2026
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -10,12 +10,12 @@ defined( 'ABSPATH' ) || exit;
 ?>
 </div> <!-- end page -->
 <div id="footer-top"></div>
-<footer>
-	<div class="footer container-xl pt-5 pb-4">
+<footer class="footer">
+	<div class="container pt-5 pb-4">
 		<div class="row g-4 mb-4">
 			<div class="col-lg-4 text-center text-lg-start">
-				<img src="<?= esc_url( get_stylesheet_directory_uri() . '/img/devtec-logo--wo.svg' ); ?>"
-					width=270 height=74 class="footer__logo" alt="Devtec Properties Logo">
+				<img src="<?= esc_url( get_stylesheet_directory_uri() . '/img/tidy-solutions-logo--wh.svg' ); ?>"
+					width=270 height=74 class="footer__logo" alt="Tidy Solutions Logo">
 			</div>
 			<div class="col-sm-6 col-lg-4 text-center text-lg-start">
 				<?php
@@ -45,10 +45,10 @@ defined( 'ABSPATH' ) || exit;
 		</div>
 	</div>
 	<div class="colophon">
-		<div class="container-xl py-2">
+		<div class="container py-2">
 			<div class="d-flex flex-wrap justify-content-between">
 				<div class="col-md-6 text-center text-md-start">
-					&copy; <?= esc_html( gmdate( 'Y' ) ); ?> Devtec Properties Ltd. Registered in England No. 09534897.
+					&copy; <?= esc_html( gmdate( 'Y' ) ); ?> Tidy Solutions.
 				</div>
 				<div class="col-md-6 d-flex align-items-center justify-content-end flex-wrap gap-1">
 					<span><a href="/privacy-policy/">Privacy</a> &amp; <a href="/cookie-policy/">Cookies</a></span> |

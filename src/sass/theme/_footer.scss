@@ -1,6 +1,9 @@
 footer {
-  background-color: var(--col-accent-400);
+  background-color: var(--col-dark-800);
   color: var(--col-white);
+  // .container {
+  //   border-top: 1px solid var(--col-primary-500);
+  // }
 
   a {
     color: var(--col-white);
@@ -19,9 +22,12 @@ footer {
   }
 
   .colophon {
-    background-color: var(--col-accent-900);
-    font-size: var(--fs-300);
+    background-color: var(--col-dark-800);
+    font-size: var(--fs-200);
     color: #ffffffcc;
+    .container {
+      border-top: 1px solid var(--col-dark-500);
+    }
     a {
       opacity: 0.8;
     }
