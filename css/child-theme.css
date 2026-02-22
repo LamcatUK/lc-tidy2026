@@ -22260,6 +22260,13 @@ header .dropdown.current-page-ancestor > .nav-link,
 header .dropdown.current-menu-item > .nav-link {
   color: var(--col-accent-400);
 }
+@media (max-width: 992px) {
+  header .navbar-nav {
+    row-gap: 1rem;
+    padding-block: 1rem;
+    font-size: var(--fs-600);
+  }
+}
 @media (min-width: 992px) {
   header .navbar-expand-lg {
     padding-bottom: 0;
