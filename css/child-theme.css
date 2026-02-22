@@ -22243,11 +22243,11 @@ header .logo-container {
   }
 }
 header .logo {
-  background-position: center;
+  background-position: center left;
   background-repeat: no-repeat;
   background-size: contain;
-  display: inline-block;
-  max-width: 100%;
+  display: block;
+  flex-shrink: 0;
   padding-block: 0;
   background-image: url(../img/tidy-horizontal--dk.svg);
   height: 50px;
