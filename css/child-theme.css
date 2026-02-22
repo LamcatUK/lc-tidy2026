@@ -22149,6 +22149,8 @@ strong {
 }
 @media (max-width: 575px) {
   .button:not(.nav-link) {
+    display: block;
+    box-sizing: border-box;
     width: 100%;
     text-align: center;
   }

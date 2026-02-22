@@ -40,6 +40,8 @@
   }
   @media (max-width: 575px) {
     &:not(.nav-link) {
+      display: block;
+      box-sizing: border-box;
       width: 100%;
       text-align: center;
     }
