@@ -25,11 +25,7 @@ defined( 'ABSPATH' ) || exit;
 				</div>
 				<div>
 					<i class="fa-solid fa-shield"></i>
-					Fully licensed waste carrier
-				</div>
-				<div>
-					<i class="fa-solid fa-leaf"></i>
-					Responsible recycling
+					Responsible disposal &amp; recycling
 				</div>
 				<div>
 					<i class="fa-solid fa-tag"></i>
