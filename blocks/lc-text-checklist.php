@@ -24,17 +24,29 @@ $extra      = $block['className'] ?? '';
 			</div>
 			<div class="col-lg-8 col-xl-6 mx-auto my-auto">
 				<div class="text-checklist__list-wrapper">
-					<ul class="text-checklist__list fa-ul mb-0 has-500-font-size">
+					<ul class="text-checklist__list mb-0 has-500-font-size cols-lg-2">
 						<?php
-						echo lc_list(
-							get_field( 'checklist' ),
-							array(
-								'icon' => '<span class="fa-stack fa-xxs check-icon">
-  <i class="fa-solid fa-circle fa-stack-2x"></i>
-  <i class="fa-solid fa-check fa-stack-1x"></i>
-</span>',
-							)
-						);
+						$checklist = get_field( 'checklist' );
+						if ( $checklist ) {
+							// Strip HTML tags first, then split on newlines.
+							$checklist = strip_tags( $checklist, '<br>' );
+							$items     = preg_split( '/<br\s*\/?>/i', $checklist, -1, PREG_SPLIT_NO_EMPTY );
+							foreach ( $items as $item ) {
+								$item = trim( $item );
+								if ( empty( $item ) ) {
+									continue;
+								}
+								?>
+						<li>
+							<span class="text-checklist__icon">
+								<i class="fa-solid fa-circle"></i>
+								<i class="fa-solid fa-check"></i>
+							</span>
+							<span><?= esc_html( $item ); ?></span>
+						</li>
+								<?php
+							}
+						}
 						?>
 					</ul>
 				</div>

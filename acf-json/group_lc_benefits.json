@@ -1,10 +1,10 @@
 {
-    "key": "group_lc_service_cards",
-    "title": "LC Service Cards",
+    "key": "group_lc_benefits",
+    "title": "LC Benefits",
     "fields": [
         {
-            "key": "field_lc_service_cards_title",
-            "label": "LC Service Cards",
+            "key": "field_lc_benefits_title",
+            "label": "LC Benefits",
             "name": "",
             "aria-label": "",
             "type": "message",
@@ -21,9 +21,30 @@
             "new_lines": "wpautop"
         },
         {
-            "key": "field_6999e36fd07dc",
-            "label": "Services",
-            "name": "services",
+            "key": "field_69a1e0e9b346b",
+            "label": "Title",
+            "name": "title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_69a1e091c6a4e",
+            "label": "Benefits",
+            "name": "benefits",
             "aria-label": "",
             "type": "repeater",
             "instructions": "",
@@ -34,7 +55,7 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "block",
+            "layout": "table",
             "pagination": 0,
             "min": 0,
             "max": 0,
@@ -43,7 +64,7 @@
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_6999e378d07dd",
+                    "key": "field_69a1e0b6c6a4f",
                     "label": "Icon",
                     "name": "icon",
                     "aria-label": "",
@@ -67,10 +88,10 @@
                     "mime_types": "svg",
                     "allow_in_bindings": 0,
                     "preview_size": "thumbnail",
-                    "parent_repeater": "field_6999e36fd07dc"
+                    "parent_repeater": "field_69a1e091c6a4e"
                 },
                 {
-                    "key": "field_6999e388d07de",
+                    "key": "field_69a1e0d7c6a50",
                     "label": "Title",
                     "name": "title",
                     "aria-label": "",
@@ -89,10 +110,10 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "parent_repeater": "field_6999e36fd07dc"
+                    "parent_repeater": "field_69a1e091c6a4e"
                 },
                 {
-                    "key": "field_6999e390d07df",
+                    "key": "field_69a1e0dcc6a51",
                     "label": "Text",
                     "name": "text",
                     "aria-label": "",
@@ -108,28 +129,10 @@
                     "default_value": "",
                     "maxlength": "",
                     "allow_in_bindings": 0,
-                    "rows": "",
+                    "rows": 4,
                     "placeholder": "",
-                    "new_lines": "",
-                    "parent_repeater": "field_6999e36fd07dc"
-                },
-                {
-                    "key": "field_69a1b41eb07bf",
-                    "label": "Link",
-                    "name": "link",
-                    "aria-label": "",
-                    "type": "link",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "allow_in_bindings": 0,
-                    "parent_repeater": "field_6999e36fd07dc"
+                    "new_lines": "br",
+                    "parent_repeater": "field_69a1e091c6a4e"
                 }
             ]
         }
@@ -139,7 +142,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/lc-service-cards"
+                "value": "acf\/lc-benefits"
             }
         ]
     ],
@@ -153,5 +156,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1772205102
+    "modified": 1772216709
 }
