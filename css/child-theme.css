@@ -22217,16 +22217,15 @@ header .navbar-brand.logo {
   }
 }
 header .navbar-nav .nav-link {
-  color: var(--col-black);
-  font-family: var(--ff-body);
+  color: var(--col-dark-900);
+  font-family: var(--ff-heading);
   font-size: var(--fs-300);
-  font-weight: var(--fw-600);
   text-transform: uppercase;
   display: flex;
   align-items: center;
 }
 header .navbar-nav .nav-link:hover, header .navbar-nav .nav-link:focus {
-  color: var(--col-primary-600);
+  color: var(--col-primary-700);
 }
 header .navbar-nav .show > .nav-link,
 header .navbar-nav .current_page_item > .nav-link,
@@ -22234,12 +22233,9 @@ header .navbar-nav .current_menu_item > .nav-link {
   color: var(--col-dark-900);
 }
 header .navbar-nav .dropdown-menu .dropdown-item {
-  color: var(--col-black);
+  color: var(--col-dark-900);
   font-family: var(--ff-body);
-  font-weight: var(--fw-600);
-}
-header .navbar-nav .dropdown-menu .dropdown-item:hover, header .navbar-nav .dropdown-menu .dropdown-item:focus {
-  color: var(--col-primary-600);
+  font-weight: var(--fw-regular);
 }
 
 footer {
