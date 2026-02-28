@@ -38,7 +38,9 @@ defined( 'ABSPATH' ) || exit;
 				$socials = get_field( 'socials', 'option' );
 				if ( $socials && ( ! empty( $socials['facebook_url'] ) || ! empty( $socials['instagram_url'] ) || ! empty( $socials['twitter_url'] ) || ! empty( $socials['pinterest_url'] ) || ! empty( $socials['youtube_url'] ) || ! empty( $socials['linkedin_url'] ) ) ) {
 					?>
-				Connect: <?= do_shortcode( '[social_icons]' ); ?>
+				<div class="mt-3">
+					Connect: <?= do_shortcode( '[social_icons class="has-700-font-size"]' ); ?>
+				</div>
 					<?php
 				}
 				?>
