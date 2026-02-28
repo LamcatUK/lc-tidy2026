@@ -22,7 +22,7 @@ defined( 'ABSPATH' ) || exit;
 				wp_nav_menu(
 					array(
 						'theme_location' => 'footer_menu1',
-						'menu_class'     => 'cols-lg-2',
+						'menu_class'     => 'menu cols-lg-2',
 					)
 				);
 				?>
