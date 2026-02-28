@@ -13,20 +13,21 @@ defined( 'ABSPATH' ) || exit;
 <footer class="footer">
 	<div class="container pt-5 pb-4">
 		<div class="row g-4 mb-4">
-			<div class="col-lg-4 text-center text-lg-start">
+			<div class="col-lg-3 text-center text-lg-start">
 				<img src="<?= esc_url( get_stylesheet_directory_uri() . '/img/tidy-solutions-logo--wh.svg' ); ?>"
 					width=270 height=74 class="footer__logo" alt="Tidy Solutions Logo">
 			</div>
-			<div class="col-sm-6 col-lg-4 text-center text-lg-start">
+			<div class="col-sm-6 col-lg-6 text-center text-lg-start">
 				<?php
 				wp_nav_menu(
 					array(
 						'theme_location' => 'footer_menu1',
+						'menu_class'     => 'cols-lg-2',
 					)
 				);
 				?>
 			</div>
-			<div class="col-lg-4 text-center text-lg-start">
+			<div class="col-lg-3 text-center text-lg-start">
 				<div class="mb-2"><i class="fa-solid fa-phone"></i>
 					<?= do_shortcode( '[contact_phone]' ); ?>
 				</div>
