@@ -48,12 +48,6 @@
           "origin": "theme"
         },
         {
-          "name": "white",
-          "slug": "white",
-          "color": "#ffffff",
-          "origin": "theme"
-        },
-        {
           "name": "light-800",
           "slug": "light-800",
           "color": "#cccccc",

@@ -103,13 +103,13 @@ function whatsapp_link( $atts = array() ) {
 	);
 
 	if ( get_field( 'contact_phone', 'options' ) ) {
-		$phone      = get_field( 'contact_phone', 'options' );
-		$number     = ltrim( parse_phone( $phone ), '+' );
-		$site_name  = get_bloginfo( 'name' );
-		$message    = rawurlencode( "I'm contacting you from the {$site_name} website..." );
-		$icon_html  = ( 'true' === $atts['icon'] || true === $atts['icon'] ) ? '<i class="fa-brands fa-whatsapp me-2"></i> ' : '';
-		$link_text  = $icon_html . wp_kses_post( $atts['text'] );
-		$class      = esc_attr( $atts['class'] );
+		$phone     = get_field( 'contact_phone', 'options' );
+		$number    = ltrim( parse_phone( $phone ), '+' );
+		$site_name = get_bloginfo( 'name' );
+		$message   = rawurlencode( "I'm contacting you from the {$site_name} website..." );
+		$icon_html = ( 'true' === $atts['icon'] || true === $atts['icon'] ) ? '<i class="fa-brands fa-whatsapp me-2"></i> ' : '';
+		$link_text = $icon_html . wp_kses_post( $atts['text'] );
+		$class     = esc_attr( $atts['class'] );
 
 		return '<a href="https://wa.me/' . esc_attr( $number ) . '?text=' . $message . '" class="' . $class . '" target="_blank" rel="noopener noreferrer">' . $link_text . '</a>';
 	}
@@ -446,7 +446,7 @@ add_action( 'send_headers', 'enable_strict_transport_security_hsts_header' );
  * Convert field content to an HTML list.
  *
  * @param string $field   The field content to convert.
- * @param array  $options Optional. {
+ * @param array  $options Optional {.
  *     @type string $icon  HTML string prepended inside each <li>. When supplied,
  *                         a Font Awesome-style fa-ul/fa-li structure is used and
  *                         list bullets are suppressed. Default ''.

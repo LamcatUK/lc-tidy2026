@@ -1,14 +1,14 @@
 footer {
   background-color: var(--col-dark-800);
-  color: var(--col-white);
+  color: var(--col-light-300);
   // .container {
   //   border-top: 1px solid var(--col-primary-500);
   // }
 
   a {
-    color: var(--col-white);
+    color: var(--col-light-300);
     &:hover {
-      color: var(--col-gold);
+      color: var(--col-primary-500);
       opacity: 1;
     }
   }
@@ -25,8 +25,14 @@ footer {
     margin-left: 1.5rem;
   }
 
-  .fa-solid {
+  .fa-solid,
+  .fa-brands {
     color: var(--col-primary-500);
+  }
+
+  .social-icons {
+    display: inline-flex;
+    gap: 0.5rem;
   }
 
   .colophon {

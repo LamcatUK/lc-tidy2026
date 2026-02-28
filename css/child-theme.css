@@ -13,7 +13,6 @@
   /* =========================
      Light neutrals
   ========================== */
-  --col-white: #ffffff; /* absolute white */
   --col-light-800: #cccccc; /* primary light bg */
   --col-light-700: #dcdcdc; /* light borders */
   --col-light-600: #e6e6e6; /* subtle UI blocks */
@@ -22074,38 +22073,6 @@ strong {
   font-family: var(--ff-body);
 }
 
-.bg-purple-400 {
-  background-color: var(--col-purple-400);
-  color: var(--col-white);
-}
-
-.has-purple-400-color,
-.text-purple-400 {
-  color: var(--col-purple-400);
-}
-
-.bg-teal-400 {
-  background-color: var(--col-teal-400);
-  color: var(--col-white);
-}
-
-.has-ivory-background-color,
-.bg-ivory {
-  background-color: var(--col-ivory);
-}
-
-.has-teal-200-background-color,
-.bg-teal-200 {
-  background-color: var(--col-teal-200);
-}
-
-.has-purple-400-background-color {
-  background-color: var(--col-purple-400);
-}
-.has-purple-400-background-color a {
-  color: white;
-}
-
 .btn, .wpcf7 input[type=submit] {
   padding: 0.5rem 2rem;
   border-radius: 0.5rem;
@@ -22115,14 +22082,14 @@ strong {
 .btn-outline-primary,
 .wpcf7 input[type=submit] {
   background-color: var(--col-pink-400);
-  color: var(--col-white);
+  color: var(--col-light-300);
   font-weight: var(--fw-500);
   transition: background-color var(--transition);
 }
 .btn-primary:hover,
 .btn-outline-primary:hover,
 .wpcf7 input[type=submit]:hover {
-  color: var(--col-white);
+  color: var(--col-light-300);
   background-color: color-mix(in srgb, var(--col-pink-400), var(--col-black) 10%);
 }
 .btn-primary,
@@ -22173,16 +22140,16 @@ strong {
 }
 .button--outline:hover {
   background-color: var(--col-dark-900);
-  color: var(--col-white);
+  color: var(--col-light-300);
 }
 
 .button--outline-white {
   background-color: transparent;
-  border: 2px solid var(--col-white);
-  color: var(--col-white);
+  border: 2px solid var(--col-light-300);
+  color: var(--col-light-300);
 }
 .button--outline-white:hover {
-  background-color: var(--col-white);
+  background-color: var(--col-light-300);
   color: var(--col-dark-900);
 }
 
@@ -22240,13 +22207,13 @@ header .navbar-nav .dropdown-menu .dropdown-item {
 
 footer {
   background-color: var(--col-dark-800);
-  color: var(--col-white);
+  color: var(--col-light-300);
 }
 footer a {
-  color: var(--col-white);
+  color: var(--col-light-300);
 }
 footer a:hover {
-  color: var(--col-gold);
+  color: var(--col-primary-500);
   opacity: 1;
 }
 footer .footer__logo {
@@ -22259,8 +22226,13 @@ footer ul.menu {
 footer ul.fa-ul {
   margin-left: 1.5rem;
 }
-footer .fa-solid {
+footer .fa-solid,
+footer .fa-brands {
   color: var(--col-primary-500);
+}
+footer .social-icons {
+  display: inline-flex;
+  gap: 0.5rem;
 }
 footer .colophon {
   background-color: var(--col-dark-800);
@@ -22459,7 +22431,7 @@ footer .colophon a {
 }
 
 .text-checklist__list-wrapper {
-  background-color: var(--col-white);
+  background-color: var(--col-light-300);
   border: 1px solid var(--col-light-600);
   border-radius: var(--radius-100);
   padding: 1.5rem;
@@ -22746,7 +22718,7 @@ html {
 }
 
 body {
-  background-color: var(--col-white);
+  background-color: var(--col-light-300);
   color: var(--col-black);
   overflow-x: hidden;
 }

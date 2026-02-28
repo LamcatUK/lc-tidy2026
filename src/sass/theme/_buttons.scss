@@ -6,11 +6,11 @@
 .btn-primary,
 .btn-outline-primary {
   background-color: var(--col-pink-400);
-  color: var(--col-white);
+  color: var(--col-light-300);
   font-weight: var(--fw-500);
   transition: background-color var(--transition);
   &:hover {
-    color: var(--col-white);
+    color: var(--col-light-300);
     background-color: color-mix(
       in srgb,
       var(--col-pink-400),
@@ -67,16 +67,16 @@
   border: 2px solid var(--col-dark-900);
   &:hover {
     background-color: var(--col-dark-900);
-    color: var(--col-white);
+    color: var(--col-light-300);
   }
 }
 
 .button--outline-white {
   background-color: transparent;
-  border: 2px solid var(--col-white);
-  color: var(--col-white);
+  border: 2px solid var(--col-light-300);
+  color: var(--col-light-300);
   &:hover {
-    background-color: var(--col-white);
+    background-color: var(--col-light-300);
     color: var(--col-dark-900);
   }
 }
