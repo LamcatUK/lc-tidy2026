@@ -15,7 +15,7 @@ $fg = ! empty( $block['textColor'] ) ? 'has-' . $block['textColor'] . '-color' :
 <section class="service-list <?= esc_attr( trim( $bg . ' ' . $fg ) ); ?>">
 	<div class="container">
 		<h2><?= esc_html( get_field( 'title' ) ); ?></h2>
-		<p class="has-600-font-size mb-4"><?= esc_html( get_field( 'outro' ) ); ?></p>
+		<p class="has-600-font-size mb-4"><?= esc_html( get_field( 'intro' ) ); ?></p>
 		<div class="service-list__grid">
 			<?php
 			while ( have_rows( 'services' ) ) {
