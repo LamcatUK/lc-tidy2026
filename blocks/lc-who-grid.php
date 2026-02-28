@@ -12,13 +12,13 @@ defined( 'ABSPATH' ) || exit;
 	<div class="container py-5">
 		<h2><?= esc_html( get_field( 'title' ) ); ?></h2>
 		<p class="has-600-font-size mb-4"><?= esc_html( get_field( 'intro' ) ); ?></p>
-		<div class="who-grid__grid row g-4 mb-4">
+		<div class="who-grid__grid mb-4">
 			<?php
 			while ( have_rows( 'items' ) ) {
 				the_row();
 				$l = get_sub_field( 'item' );
 				?>
-			<div class="col-md-6 col-lg-3 who-grid__item">
+			<div class="who-grid__item">
 				<div class="who-grid__icon-wrapper">
 					<img src="<?= esc_url( get_sub_field( 'icon' )['url'] ); ?>" alt="<?= esc_attr( get_sub_field( 'icon' )['alt'] ); ?>" class="who-grid__icon">
 				</div>
