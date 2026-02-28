@@ -17,107 +17,124 @@ function acf_blocks() {
 
 		// INSERT NEW BLOCKS HERE.
 
-        acf_register_block_type(
-            array(
-                'name'            => 'lc_benefits',
-                'title'           => __( 'LC Benefits' ),
-                'category'        => 'layout',
-                'icon'            => 'cover-image',
-                'render_template' => 'blocks/lc-benefits.php',
-                'mode'            => 'edit',
-                'supports'        => array(
-                    'mode'      => false,
-                    'anchor'    => true,
-                    'className' => true,
-                    'align'     => true,
-                ),
-            )
-        );
+		acf_register_block_type(
+			array(
+				'name'            => 'lc_how_stack',
+				'title'           => __( 'LC How Stack' ),
+				'category'        => 'layout',
+				'icon'            => 'cover-image',
+				'render_template' => 'blocks/lc-how-stack.php',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'mode'      => false,
+					'anchor'    => true,
+					'className' => true,
+					'align'     => true,
+				),
+			)
+		);
 
-        acf_register_block_type(
-            array(
-                'name'            => 'lc_faq',
-                'title'           => __( 'LC FAQ' ),
-                'category'        => 'layout',
-                'icon'            => 'cover-image',
-                'render_template' => 'blocks/lc-faq.php',
-                'mode'            => 'edit',
-                'supports'        => array(
-                    'mode'      => false,
-                    'anchor'    => true,
-                    'className' => true,
-                    'align'     => true,
-                ),
-            )
-        );
+		acf_register_block_type(
+			array(
+				'name'            => 'lc_benefits',
+				'title'           => __( 'LC Benefits' ),
+				'category'        => 'layout',
+				'icon'            => 'cover-image',
+				'render_template' => 'blocks/lc-benefits.php',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'mode'      => false,
+					'anchor'    => true,
+					'className' => true,
+					'align'     => true,
+				),
+			)
+		);
 
-        acf_register_block_type(
-            array(
-                'name'            => 'lc_form',
-                'title'           => __( 'LC Form' ),
-                'category'        => 'layout',
-                'icon'            => 'cover-image',
-                'render_template' => 'blocks/lc-form.php',
-                'mode'            => 'edit',
-                'supports'        => array(
-                    'mode'      => false,
-                    'anchor'    => true,
-                    'className' => true,
-                    'align'     => true,
-                ),
-            )
-        );
+		acf_register_block_type(
+			array(
+				'name'            => 'lc_faq',
+				'title'           => __( 'LC FAQ' ),
+				'category'        => 'layout',
+				'icon'            => 'cover-image',
+				'render_template' => 'blocks/lc-faq.php',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'mode'      => false,
+					'anchor'    => true,
+					'className' => true,
+					'align'     => true,
+				),
+			)
+		);
 
-        acf_register_block_type(
-            array(
-                'name'            => 'lc_cta',
-                'title'           => __( 'LC CTA' ),
-                'category'        => 'layout',
-                'icon'            => 'cover-image',
-                'render_template' => 'blocks/lc-cta.php',
-                'mode'            => 'edit',
-                'supports'        => array(
-                    'mode'      => false,
-                    'anchor'    => true,
-                    'className' => true,
-                    'align'     => true,
-                ),
-            )
-        );
+		acf_register_block_type(
+			array(
+				'name'            => 'lc_form',
+				'title'           => __( 'LC Form' ),
+				'category'        => 'layout',
+				'icon'            => 'cover-image',
+				'render_template' => 'blocks/lc-form.php',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'mode'      => false,
+					'anchor'    => true,
+					'className' => true,
+					'align'     => true,
+				),
+			)
+		);
 
-        acf_register_block_type(
-            array(
-                'name'            => 'lc_review_slider',
-                'title'           => __( 'LC Review Slider' ),
-                'category'        => 'layout',
-                'icon'            => 'cover-image',
-                'render_template' => 'blocks/lc-review-slider.php',
-                'mode'            => 'edit',
-                'supports'        => array(
-                    'mode'      => false,
-                    'anchor'    => true,
-                    'className' => true,
-                    'align'     => true,
-                ),
-            )
-        );
+		acf_register_block_type(
+			array(
+				'name'            => 'lc_cta',
+				'title'           => __( 'LC CTA' ),
+				'category'        => 'layout',
+				'icon'            => 'cover-image',
+				'render_template' => 'blocks/lc-cta.php',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'mode'      => false,
+					'anchor'    => true,
+					'className' => true,
+					'align'     => true,
+				),
+			)
+		);
 
-        acf_register_block_type(
-            array(
-                'name'            => 'lc_areas',
-                'title'           => __( 'LC Areas' ),
-                'category'        => 'layout',
-                'icon'            => 'cover-image',
-                'render_template' => 'blocks/lc-areas.php',
-                'mode'            => 'edit',
-                'supports'        => array(
-                    'mode'      => false,
-                    'anchor'    => true,
-                    'className' => true,
-                    'align'     => true,
-                ),
-            )
-        );
+		acf_register_block_type(
+			array(
+				'name'            => 'lc_review_slider',
+				'title'           => __( 'LC Review Slider' ),
+				'category'        => 'layout',
+				'icon'            => 'cover-image',
+				'render_template' => 'blocks/lc-review-slider.php',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'mode'      => false,
+					'anchor'    => true,
+					'className' => true,
+					'align'     => true,
+				),
+			)
+		);
+
+		acf_register_block_type(
+			array(
+				'name'            => 'lc_areas',
+				'title'           => __( 'LC Areas' ),
+				'category'        => 'layout',
+				'icon'            => 'cover-image',
+				'render_template' => 'blocks/lc-areas.php',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'mode'      => false,
+					'anchor'    => true,
+					'className' => true,
+					'align'     => true,
+				),
+			)
+		);
 
 		acf_register_block_type(
 			array(

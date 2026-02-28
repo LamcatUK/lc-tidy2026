@@ -1,0 +1,7 @@
+.how-stack {
+  overflow: hidden;
+  &__number {
+    opacity: 0.8;
+    line-height: var(--lh-1000);
+  }
+}

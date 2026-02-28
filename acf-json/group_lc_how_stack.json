@@ -1,0 +1,296 @@
+{
+  "key": "group_lc_how_stack",
+  "title": "LC How Stack",
+  "fields": [
+    {
+      "key": "field_lc_how_stack_title",
+      "label": "LC How Stack",
+      "name": "",
+      "aria-label": "",
+      "type": "message",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": false,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "message": "",
+      "esc_html": 0,
+      "new_lines": "wpautop"
+    },
+    {
+      "key": "field_69a3195c5e9c4",
+      "label": "Title",
+      "name": "title",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "allow_in_bindings": 0,
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_69a319615e9c5",
+      "label": "Intro",
+      "name": "intro",
+      "aria-label": "",
+      "type": "textarea",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "allow_in_bindings": 0,
+      "rows": 6,
+      "placeholder": "",
+      "new_lines": "br"
+    },
+    {
+      "key": "field_69a3196e5e9c6",
+      "label": "Step 1 Title",
+      "name": "step_1_title",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "allow_in_bindings": 0,
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_69a31aaf124e0",
+      "label": "Step 1 Subtitle",
+      "name": "step_1_subtitle",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "allow_in_bindings": 0,
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_69a319815e9c7",
+      "label": "Step 1 Content",
+      "name": "step_1_content",
+      "aria-label": "",
+      "type": "textarea",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "allow_in_bindings": 0,
+      "rows": 6,
+      "placeholder": "",
+      "new_lines": "wpautop"
+    },
+    {
+      "key": "field_69a319bc5e9ca",
+      "label": "Step 2 Title",
+      "name": "step_2_title",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "allow_in_bindings": 0,
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_69a31ac2124e1",
+      "label": "Step 2 Subtitle",
+      "name": "step_2_subtitle",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "allow_in_bindings": 0,
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_69a3199f5e9c8",
+      "label": "Step 2 Content",
+      "name": "step_2_content",
+      "aria-label": "",
+      "type": "textarea",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "allow_in_bindings": 0,
+      "rows": 6,
+      "placeholder": "",
+      "new_lines": "wpautop"
+    },
+    {
+      "key": "field_69a319c65e9cb",
+      "label": "Step 3 Title",
+      "name": "step_3_title",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "allow_in_bindings": 0,
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_69a31acd124e2",
+      "label": "Step 3 Subtitle",
+      "name": "step_3_subtitle",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "allow_in_bindings": 0,
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    },
+    {
+      "key": "field_69a319ae5e9c9",
+      "label": "Step 3 Content",
+      "name": "step_3_content",
+      "aria-label": "",
+      "type": "textarea",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "allow_in_bindings": 0,
+      "rows": 6,
+      "placeholder": "",
+      "new_lines": "wpautop"
+    },
+    {
+      "key": "field_69a319d55e9cc",
+      "label": "Highlight",
+      "name": "highlight",
+      "aria-label": "",
+      "type": "text",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "default_value": "",
+      "maxlength": "",
+      "allow_in_bindings": 0,
+      "placeholder": "",
+      "prepend": "",
+      "append": ""
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf\/lc-how-stack"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "display_title": "",
+  "modified": 1772297756
+}
