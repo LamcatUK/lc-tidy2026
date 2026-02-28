@@ -9,7 +9,7 @@ defined( 'ABSPATH' ) || exit;
 
 ?>
 <section class="who-grid">
-	<div class="container">
+	<div class="container py-5">
 		<h2><?= esc_html( get_field( 'title' ) ); ?></h2>
 		<p class="has-600-font-size mb-4"><?= esc_html( get_field( 'intro' ) ); ?></p>
 		<div class="who-grid__grid row g-4 mb-4">
@@ -23,7 +23,7 @@ defined( 'ABSPATH' ) || exit;
 					<img src="<?= esc_url( get_sub_field( 'icon' )['url'] ); ?>" alt="<?= esc_attr( get_sub_field( 'icon' )['alt'] ); ?>" class="who-grid__icon">
 				</div>
 				<h3 class="who-grid__item-title has-600-font-size mb-0"><?= esc_html( get_sub_field( 'title' ) ); ?></h3>
-				<p class="who-grid__item-description"><?= esc_html( get_sub_field( 'description' ) ); ?></p>
+				<div class="who-grid__item-description"><?= esc_html( get_sub_field( 'description' ) ); ?></div>
 			</div>
 				<?php
 			}

@@ -22758,6 +22758,9 @@ footer .colophon a {
   width: 90px;
 }
 
+.who-grid .container {
+  border-bottom: 1px solid var(--col-dark-400);
+}
 .who-grid__item:not(:last-child) {
   border-bottom: 1px solid var(--col-dark-400);
 }

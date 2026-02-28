@@ -32,6 +32,6 @@ $fg = ! empty( $block['textColor'] ) ? 'has-' . $block['textColor'] . '-color' :
 			}
 			?>
 		</div>
-		<p class="has-600-font-size"><?= esc_html( get_field( 'outro' ) ); ?></p>
+		<div class="has-600-font-size"><?= esc_html( get_field( 'outro' ) ); ?></div>
 	</div>
 </section>
