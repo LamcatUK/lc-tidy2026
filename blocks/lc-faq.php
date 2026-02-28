@@ -7,8 +7,12 @@
 
 defined( 'ABSPATH' ) || exit;
 
+// Support Gutenberg color picker.
+$bg = ! empty( $block['backgroundColor'] ) ? 'has-' . $block['backgroundColor'] . '-background-color' : '';
+$fg = ! empty( $block['textColor'] ) ? 'has-' . $block['textColor'] . '-color' : '';
+
 ?>
-<section class="faq py-5 has-secondary-100-background-color">
+<section class="faq py-5 <?= esc_attr( trim( $bg . ' ' . $fg ) ); ?>">
 	<div class="container">
 		<h2><?= esc_html( get_field( 'title' ) ); ?></h2>
 		<div class="faq__intro w-constrained-md mb-5"><?= esc_html( get_field( 'intro' ) ); ?></div>

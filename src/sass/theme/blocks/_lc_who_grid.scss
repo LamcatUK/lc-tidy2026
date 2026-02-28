@@ -1,7 +1,4 @@
 .who-grid {
-  .container {
-    border-bottom: 1px solid var(--col-dark-400);
-  }
   &__item {
     &:not(:last-child) {
       border-bottom: 1px solid var(--col-dark-400);
