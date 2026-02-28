@@ -16,7 +16,7 @@ $fg = ! empty( $block['textColor'] ) ? 'has-' . $block['textColor'] . '-color' :
 	<div class="container">
 		<h2><?= esc_html( get_field( 'title' ) ); ?></h2>
 		<p class="has-600-font-size mb-4"><?= esc_html( get_field( 'intro' ) ); ?></p>
-		<div class="service-list__grid">
+		<div class="service-list__grid mb-4">
 			<?php
 			while ( have_rows( 'services' ) ) {
 				the_row();
