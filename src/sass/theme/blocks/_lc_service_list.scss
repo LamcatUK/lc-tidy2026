@@ -1,0 +1,40 @@
+.service-list {
+  background-color: var(--col-light-400);
+  padding-block: 3rem;
+  &__grid {
+    display: grid;
+    gap: 1rem;
+    @media (min-width: 1200px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__item {
+    padding: 0 1rem;
+    border-radius: var(--radius-100);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition:
+      background-color var(--transition),
+      color var(--transition);
+    color: var(--col-dark-900);
+    @media (min-width: 768px) {
+      gap: 2rem;
+    }
+    &:hover {
+      background-color: var(--col-light-600);
+      color: var(--col-dark-700);
+    }
+  }
+  &__icon-wrapper {
+    height: 100px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    aspect-ratio: 98 / 76;
+    width: 90px;
+  }
+}

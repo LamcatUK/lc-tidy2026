@@ -10,7 +10,6 @@ defined( 'ABSPATH' ) || exit;
 // Support Gutenberg color picker.
 $bg         = ! empty( $block['backgroundColor'] ) ? 'has-' . $block['backgroundColor'] . '-background-color' : '';
 $fg         = ! empty( $block['textColor'] ) ? 'has-' . $block['textColor'] . '-color' : '';
-$headings   = ! empty( $fg ) ? $fg : 'has-blue-400-color';
 $section_id = $block['anchor'] ?? null;
 $extra      = $block['className'] ?? '';
 
