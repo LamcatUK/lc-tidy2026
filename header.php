@@ -36,7 +36,7 @@ defined( 'ABSPATH' ) || exit;
 	</script>
 		<?php
 	}
-	if ( ! is_user_logged_in() ) {
+	if ( ! is_user_logged_in() && strpos( get_home_url(), 'staging' ) === false ) {
 		if ( get_field( 'ga_property', 'options' ) ) {
 			?>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -94,19 +94,25 @@ defined( 'ABSPATH' ) || exit;
 <body <?php body_class(); ?>
 	<?php understrap_body_attributes(); ?>>
 	<?php
+	if ( ! is_user_logged_in() && strpos( get_home_url(), 'staging' ) === false ) {
+		if ( get_field( 'gtm_property', 'options' ) ) {
+			?>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe
+			src="https://www.googletagmanager.com/ns.html?id=<?= esc_attr( get_field( 'gtm_property', 'options' ) ); ?>"
+			height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+			<?php
+		}
+	}
 	do_action( 'wp_body_open' );
 	?>
-<header id="wrapper-navbar" class="fixed-top p-0" itemscope
-	itemtype="http://schema.org/WebSite">
-	<nav class="navbar navbar-expand-lg p-0" aria-label="Main Navigation">
+<header id="wrapper-navbar" class="fixed-top" itemscope itemtype="http://schema.org/WebSite">
+	<nav class="navbar navbar-expand-lg navbar-light bg-white" aria-label="Main Navigation">
 		<div class="container">
-			<div class="logo-container d-flex align-items-center py-2">
-				<a href="/" class="logo navbar-brand" aria-label="Tidy Solutions Homepage"></a>
-			</div>
-			<button class="navbar-toggler py-2" type="button" data-bs-toggle="collapse"
-				data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<i class="fas fa-bars"></i>
+			<a href="/" class="navbar-brand logo" aria-label="Tidy Solutions Homepage"></a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div id="navbar" class="collapse navbar-collapse">
 				<?php
@@ -114,7 +120,7 @@ defined( 'ABSPATH' ) || exit;
 					array(
 						'theme_location' => 'primary_nav',
 						'container'      => false,
-						'menu_class'     => 'navbar-nav ms-auto',
+						'menu_class'     => 'navbar-nav ms-auto gap-2 gap-lg-4 py-4 py-lg-0',
 						'fallback_cb'    => '',
 						'depth'          => 3,
 						'walker'         => new Understrap_WP_Bootstrap_Navwalker(),
