@@ -17,7 +17,7 @@ defined( 'ABSPATH' ) || exit;
 				<img src="<?= esc_url( get_stylesheet_directory_uri() . '/img/tidy-solutions-logo--wh.svg' ); ?>"
 					width=270 height=74 class="footer__logo" alt="Tidy Solutions Logo">
 			</div>
-			<div class="col-sm-6 col-lg-6 text-center text-lg-start">
+			<div class="col-sm-6 col-lg-6 text-center mx-auto text-lg-start">
 				<?php
 				wp_nav_menu(
 					array(
