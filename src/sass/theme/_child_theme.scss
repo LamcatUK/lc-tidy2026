@@ -137,6 +137,10 @@ a {
   box-shadow: var(--shadow-1);
 }
 
+.wp-block-column.is-layout-flow > p {
+  margin-top: 0;
+}
+
 // show stuff that overflows horizontally
 // * {
 //     outline: 1px solid #f00 !important;

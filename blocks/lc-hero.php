@@ -46,8 +46,14 @@ defined( 'ABSPATH' ) || exit;
 			</div>
 					<?php
 			}
-			$contact_page = get_page_by_path( 'contact' );
-			if ( ! $contact_page || get_the_ID() !== $contact_page->ID ) {
+			$contact_page   = get_page_by_path( 'contact' );
+			$thank_you_page = get_page_by_path( 'thank-you' );
+			$current_id     = get_the_ID();
+
+			$hide_on_contact   = $contact_page && $current_id === $contact_page->ID;
+			$hide_on_thank_you = $thank_you_page && $current_id === $thank_you_page->ID;
+
+			if ( ! $hide_on_contact && ! $hide_on_thank_you ) {
 				?>
 			<div class="col-12 py-4 d-flex flex-wrap justify-content-center gap-4">
 				<a class="button button--lg" href="tel:<?= parse_phone( get_field( 'contact_phone', 'option' ) ); ?>"><i class="fa-solid fa-phone me-2"></i> Call Now</a>
