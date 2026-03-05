@@ -7,11 +7,14 @@
 
 defined( 'ABSPATH' ) || exit;
 
+$section_has_title = get_field('title');
+$step_heading      = $section_has_title ? 'h3' : 'h2';
+
 ?>
 <section class="how-stack has-dark-700-background-color">
 	<div class="container py-5">
 		<?php
-		if ( get_field( 'title' ) ) {
+		if ( $section_has_title ) {
 			?>
 		<h2 class="has-white-color"><?= esc_html( get_field( 'title' ) ); ?></h2>
 			<?php
@@ -27,7 +30,7 @@ defined( 'ABSPATH' ) || exit;
 				<div class="how-stack__number has-1000-font-size fw-semibold ff-heading has-primary-500-color">1</div>
 			</div>
 			<div class="col-md-11">
-				<h3 class="how-stack__title has-700-font-size has-white-color"><?= esc_html( get_field( 'step_1_title' ) ); ?></h3>
+				<<?= esc_attr( $step_heading ); ?> class="how-stack__title has-700-font-size has-white-color"><?= esc_html( get_field( 'step_1_title' ) ); ?></<?= esc_attr( $step_heading ); ?>>
 				<p class="has-600-font-size has-white-color"><strong><?= esc_html( get_field( 'step_1_subtitle' ) ); ?></strong></p>
 				<div class="how-stack__text has-400-font-size has-light-800-color mb-0"><?= wp_kses_post( get_field( 'step_1_content' ) ); ?></div>
 			</div>
@@ -37,7 +40,7 @@ defined( 'ABSPATH' ) || exit;
 				<div class="how-stack__number has-1000-font-size fw-semibold ff-heading has-primary-500-color">2</div>
 			</div>
 			<div class="col-md-11">
-				<h3 class="how-stack__title has-700-font-size has-white-color"><?= esc_html( get_field( 'step_2_title' ) ); ?></h3>
+				<<?= esc_attr( $step_heading ); ?> class="how-stack__title has-700-font-size has-white-color"><?= esc_html( get_field( 'step_2_title' ) ); ?></<?= esc_attr( $step_heading ); ?>>
 				<p class="has-600-font-size has-white-color"><strong><?= esc_html( get_field( 'step_2_subtitle' ) ); ?></strong></p>
 				<div class="how-stack__text has-400-font-size has-light-800-color mb-0"><?= wp_kses_post( get_field( 'step_2_content' ) ); ?></div>
 			</div>
@@ -47,7 +50,7 @@ defined( 'ABSPATH' ) || exit;
 				<div class="how-stack__number has-1000-font-size fw-semibold ff-heading has-primary-500-color">3</div>
 			</div>
 			<div class="col-md-11">
-				<h3 class="how-stack__title has-700-font-size has-white-color"><?= esc_html( get_field( 'step_3_title' ) ); ?></h3>
+				<<?= esc_attr( $step_heading ); ?> class="how-stack__title has-700-font-size has-white-color"><?= esc_html( get_field( 'step_3_title' ) ); ?></<?= esc_attr( $step_heading ); ?>>
 				<p class="has-600-font-size has-white-color"><strong><?= esc_html( get_field( 'step_3_subtitle' ) ); ?></strong></p>
 				<div class="how-stack__text has-400-font-size has-light-800-color mb-0"><?= wp_kses_post( get_field( 'step_3_content' ) ); ?></div>
 			</div>
