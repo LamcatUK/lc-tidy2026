@@ -33,23 +33,20 @@ defined( 'ABSPATH' ) || exit;
 	<script type="application/ld+json">
 	{
 		"@context": "https://schema.org",
-		"@type": "WasteManagementService",
+		"@type": "LocalBusiness",
 		"@id": "https://tidysolutions.im/#business",
 		"name": "Tidy Solutions",
 		"url": "https://tidysolutions.im/",
-		"logo": "https://tidysolutions.im/wp-content/uploads/2026/01/tidy-solutions-logo.png",
-		"image": "https://tidysolutions.im/wp-content/uploads/2026/01/tidy-solutions-van.jpg",
-		"description": "Junk removal and waste clearance across the Isle of Man. House clearances, builder's waste removal, garden waste and appliance removal with responsible disposal.",
 		"telephone": "+44 7624 251166",
 		"email": "info@tidysolutions.im",
-		"areaServed": {
-			"@type": "AdministrativeArea",
-			"name": "Isle of Man"
-		},
 		"address": {
 			"@type": "PostalAddress",
 			"addressLocality": "Isle of Man",
 			"addressCountry": "IM"
+		},
+		"areaServed": {
+			"@type": "AdministrativeArea",
+			"name": "Isle of Man"
 		},
 		"serviceType": [
 			"Junk removal",
@@ -77,14 +74,13 @@ defined( 'ABSPATH' ) || exit;
 		"@id": "https://tidysolutions.im/contact/#contactpage",
 		"url": "https://tidysolutions.im/contact/",
 		"name": "Contact Tidy Solutions",
-		"description": "Contact Tidy Solutions for junk removal and waste clearance across the Isle of Man. Request a quote or arrange a collection.",
+		"description": "Contact Tidy Solutions for junk removal and waste clearance across the Isle of Man.",
 		"mainEntity": {
-			"@type": "WasteManagementService",
+			"@type": "LocalBusiness",
 			"name": "Tidy Solutions",
+			"url": "https://tidysolutions.im/",
 			"telephone": "+44 7624 251166",
-			"email": "info@tidysolutions.im",
-			"areaServed": "Isle of Man",
-			"url": "https://tidysolutions.im/"
+			"email": "info@tidysolutions.im"
 		}
 	}
 	</script>
