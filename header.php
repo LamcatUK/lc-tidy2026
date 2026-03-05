@@ -32,35 +32,83 @@ defined( 'ABSPATH' ) || exit;
 		?>
 	<script type="application/ld+json">
 	{
-		"@context": "https://schema.org",
-		"@type": "LocalBusiness",
-		"@id": "https://tidysolutions.im/#business",
-		"name": "Tidy Solutions",
-		"url": "https://tidysolutions.im/",
-		"telephone": "+44 7624 251166",
-		"email": "info@tidysolutions.im",
-		"address": {
-			"@type": "PostalAddress",
-			"addressLocality": "Isle of Man",
-			"addressCountry": "IM"
+	"@context": "https://schema.org",
+	"@type": "LocalBusiness",
+	"@id": "https://tidysolutions.im/#business",
+	"name": "Tidy Solutions",
+	"url": "https://tidysolutions.im/",
+	"telephone": "+44 7624 251166",
+	"email": "info@tidysolutions.im",
+	"address": {
+		"@type": "PostalAddress",
+		"addressLocality": "Isle of Man",
+		"addressCountry": "IM"
+	},
+	"areaServed": {
+		"@type": "AdministrativeArea",
+		"name": "Isle of Man"
+	},
+	"sameAs": [
+		"https://www.facebook.com/profile.php?id=61588068492366"
+	],
+	"makesOffer": [
+		{
+		"@type": "Offer",
+		"itemOffered": {
+			"@type": "Service",
+			"name": "Junk removal"
+		}
 		},
-		"areaServed": {
-			"@type": "AdministrativeArea",
-			"name": "Isle of Man"
+		{
+		"@type": "Offer",
+		"itemOffered": {
+			"@type": "Service",
+			"name": "House clearance"
+		}
 		},
-		"serviceType": [
-			"Junk removal",
-			"House clearance",
-			"Garden waste clearance",
-			"Garage and shed clearance",
-			"Furniture and appliance removal",
-			"Builder's waste removal",
-			"Office clearance",
-			"Light demolition and strip-outs"
-		],
-		"sameAs": [
-			"https://www.facebook.com/profile.php?id=61588068492366"
-		]
+		{
+		"@type": "Offer",
+		"itemOffered": {
+			"@type": "Service",
+			"name": "Garden waste and outdoor clearance"
+		}
+		},
+		{
+		"@type": "Offer",
+		"itemOffered": {
+			"@type": "Service",
+			"name": "Garage and shed clearance"
+		}
+		},
+		{
+		"@type": "Offer",
+		"itemOffered": {
+			"@type": "Service",
+			"name": "Furniture and appliance removal"
+		}
+		},
+		{
+		"@type": "Offer",
+		"itemOffered": {
+			"@type": "Service",
+			"name": "Builder’s waste removal"
+		}
+		},
+		{
+		"@type": "Offer",
+		"itemOffered": {
+			"@type": "Service",
+			"name": "Office and commercial clearance"
+		}
+		},
+		{
+		"@type": "Offer",
+		"itemOffered": {
+			"@type": "Service",
+			"name": "Light demolition and strip-outs"
+		}
+		}
+	]
 	}
 	</script>
 		<?php
