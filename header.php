@@ -29,13 +29,67 @@ defined( 'ABSPATH' ) || exit;
 		as="font" type="font/woff2" crossorigin="anonymous">
 	<?php
 	if ( is_front_page() ) {
-		// TODO: Add JSON-LD structured data here.
 		?>
 	<script type="application/ld+json">
-
+	{
+		"@context": "https://schema.org",
+		"@type": "WasteManagementService",
+		"@id": "https://tidysolutions.im/#business",
+		"name": "Tidy Solutions",
+		"url": "https://tidysolutions.im/",
+		"logo": "https://tidysolutions.im/wp-content/uploads/2026/01/tidy-solutions-logo.png",
+		"image": "https://tidysolutions.im/wp-content/uploads/2026/01/tidy-solutions-van.jpg",
+		"description": "Junk removal and waste clearance across the Isle of Man. House clearances, builder's waste removal, garden waste and appliance removal with responsible disposal.",
+		"telephone": "+44 7624 251166",
+		"email": "info@tidysolutions.im",
+		"areaServed": {
+			"@type": "AdministrativeArea",
+			"name": "Isle of Man"
+		},
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Isle of Man",
+			"addressCountry": "IM"
+		},
+		"serviceType": [
+			"Junk removal",
+			"House clearance",
+			"Garden waste clearance",
+			"Garage and shed clearance",
+			"Furniture and appliance removal",
+			"Builder's waste removal",
+			"Office clearance",
+			"Light demolition and strip-outs"
+		],
+		"sameAs": [
+			"https://www.facebook.com/profile.php?id=61588068492366"
+		]
+	}
 	</script>
 		<?php
 	}
+	if ( is_page( 'contact' ) ) {
+		?>
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "ContactPage",
+		"@id": "https://tidysolutions.im/contact/#contactpage",
+		"url": "https://tidysolutions.im/contact/",
+		"name": "Contact Tidy Solutions",
+		"description": "Contact Tidy Solutions for junk removal and waste clearance across the Isle of Man. Request a quote or arrange a collection.",
+		"mainEntity": {
+			"@type": "WasteManagementService",
+			"name": "Tidy Solutions",
+			"telephone": "+44 7624 251166",
+			"email": "info@tidysolutions.im",
+			"areaServed": "Isle of Man",
+			"url": "https://tidysolutions.im/"
+		}
+	}
+	</script>
+		<?php
+	}	
 	if ( ! is_user_logged_in() && strpos( get_home_url(), 'staging' ) === false ) {
 		if ( get_field( 'ga_property', 'options' ) ) {
 			?>
