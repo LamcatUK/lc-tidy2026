@@ -46,12 +46,8 @@ defined( 'ABSPATH' ) || exit;
 			</div>
 					<?php
 			}
-			$contact_page   = get_page_by_path( 'contact' );
-			$thank_you_page = get_page_by_path( 'thank-you' );
-			$current_id     = get_the_ID();
-
-			$hide_on_contact   = $contact_page && $current_id === $contact_page->ID;
-			$hide_on_thank_you = $thank_you_page && $current_id === $thank_you_page->ID;
+			$hide_on_contact   = is_page( 'contact' );
+			$hide_on_thank_you = is_page( array( 'thank-you', 'contact/thank-you' ) );
 
 			if ( ! $hide_on_contact && ! $hide_on_thank_you ) {
 				?>
