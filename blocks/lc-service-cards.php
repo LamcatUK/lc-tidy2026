@@ -7,11 +7,22 @@
 
 defined( 'ABSPATH' ) || exit;
 
+$block_title = get_field( 'title' ) ? get_field( 'title' ) : 'Our Services';
+$block_intro = get_field( 'intro' ) ? get_field( 'intro' ) : '';
 ?>
 <a name="services" class="anchor"></a>
 <section class="service-cards py-5 has-dark-800-background-color">
 	<div class="container">
-		<h2 class="has-white-color">Our Services</h2>
+		<h2 class="has-white-color"><?= esc_html( $block_title ); ?></h2>
+		<?php
+		if ( $block_intro ) {
+			?>
+		<div class="service-cards__intro mb-4">
+			<p class="has-400-font-size has-light-800-color mb-0"><?= wp_kses_post( $block_intro ); ?></p>
+		</div>
+			<?php
+		}
+		?>
 		<div class="service-cards__grid">
 			<?php
 			while ( have_rows( 'services' ) ) {
