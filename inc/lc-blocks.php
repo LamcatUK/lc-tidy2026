@@ -19,6 +19,23 @@ function acf_blocks() {
 
 		acf_register_block_type(
 			array(
+				'name'            => 'lc_other_services',
+				'title'           => __( 'LC Other Services' ),
+				'category'        => 'layout',
+				'icon'            => 'list-view',
+				'render_template' => 'blocks/lc-other-services.php',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'mode'      => false,
+					'anchor'    => true,
+					'className' => true,
+					'align'     => false,
+				),
+			)
+		);
+
+		acf_register_block_type(
+			array(
 				'name'            => 'lc_breadcrumbs',
 				'title'           => __( 'LC Breadcrumbs' ),
 				'category'        => 'layout',

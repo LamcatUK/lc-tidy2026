@@ -1,4 +1,7 @@
 .benefits {
+  border-top: 1px solid var(--col-dark-600);
+  border-bottom: 1px solid var(--col-dark-600);
+
   &__grid {
     display: grid;
     grid-template-columns: 1fr;

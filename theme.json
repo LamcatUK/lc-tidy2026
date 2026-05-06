@@ -126,6 +126,12 @@
           "origin": "theme"
         },
         {
+          "name": "dark-300",
+          "slug": "dark-300",
+          "color": "#484848",
+          "origin": "theme"
+        },
+        {
           "name": "dark-warm-800",
           "slug": "dark-warm-800",
           "color": "#161616",

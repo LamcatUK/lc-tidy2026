@@ -40,6 +40,8 @@
 
 .areas {
   background: var(--col-light-warm-400);
+  border-top: 1px solid var(--col-light-600);
+  border-bottom: 1px solid var(--col-light-600);
   .container {
     position: relative;
     overflow: hidden;

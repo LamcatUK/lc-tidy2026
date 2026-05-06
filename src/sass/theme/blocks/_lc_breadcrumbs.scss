@@ -1,8 +1,10 @@
 .lc-breadcrumbs {
+  font-size: var(--fs-200);
+  color: var(--col-dark-300);
+  margin-bottom: 1rem;
   ol {
     padding-inline-start: 0;
   }
-  font-size: var(--fs-200);
   a {
     font-weight: var(--fw-semibold);
   }
