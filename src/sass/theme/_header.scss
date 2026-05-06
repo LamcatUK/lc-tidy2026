@@ -38,6 +38,10 @@ header {
     color: var(--col-primary-600);
   }
 
+  .nav-item--cta {
+    align-self: center;
+  }
+
   .navbar-nav .dropdown-menu .dropdown-item {
     color: var(--col-black);
     font-family: var(--ff-body);

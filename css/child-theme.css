@@ -22190,6 +22190,9 @@ header .navbar-nav .current_page_item > .nav-link,
 header .navbar-nav .current_menu_item > .nav-link {
   color: var(--col-primary-600);
 }
+header .nav-item--cta {
+  align-self: center;
+}
 header .navbar-nav .dropdown-menu .dropdown-item {
   color: var(--col-black);
   font-family: var(--ff-body);
