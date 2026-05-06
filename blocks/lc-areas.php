@@ -15,7 +15,7 @@ $section_id = $block['anchor'] ?? null;
 $extra      = $block['className'] ?? '';
 
 ?>
-<a name="<?= esc_attr( $section_id ); ?>" class="anchor"></a>
+<a id="<?= esc_attr( $section_id ); ?>" class="anchor"></a>
 <section class="areas <?= esc_attr( trim( $bg . ' ' . $fg ) ); ?>">
 	<div class="container <?= esc_attr( trim( $extra ) ); ?>">
 		<img src="<?= esc_url( get_stylesheet_directory_uri() . '/img/temp-map-4.png' ); ?>" class="areas__map" alt="">

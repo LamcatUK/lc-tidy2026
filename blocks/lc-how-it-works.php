@@ -8,7 +8,7 @@
 defined( 'ABSPATH' ) || exit;
 
 ?>
-<a name="how-it-works" class="anchor"></a>
+<a id="how-it-works" class="anchor"></a>
 <section class="how-it-works has-dark-700-background-color">
 	<div class="container py-5">
 		<h2 class="has-white-color"><?= esc_html( get_field( 'title' ) ); ?></h2>

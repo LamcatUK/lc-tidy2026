@@ -10,7 +10,7 @@ defined( 'ABSPATH' ) || exit;
 $block_title = get_field( 'title' ) ? get_field( 'title' ) : 'Our Services';
 $block_intro = get_field( 'intro' ) ? get_field( 'intro' ) : '';
 ?>
-<a name="services" class="anchor"></a>
+<a id="services" class="anchor"></a>
 <section class="service-cards py-5 has-dark-800-background-color">
 	<div class="container">
 		<h2 class="has-white-color"><?= esc_html( $block_title ); ?></h2>

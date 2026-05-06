@@ -34,7 +34,7 @@ defined( 'ABSPATH' ) || exit;
 	{
 	"@context": "https://schema.org",
 	"@type": "LocalBusiness",
-	"@id": "https://tidysolutions.im/#business",
+	"@id": "https://tidysolutions.im/#organization",
 	"name": "Tidy Solutions",
 	"url": "https://tidysolutions.im/",
 	"telephone": "+44 7624 251166",
@@ -133,7 +133,7 @@ defined( 'ABSPATH' ) || exit;
 	}
 	</script>
 		<?php
-	}	
+	}
 	$service_schema = get_field( 'schema' );
 	if ( $service_schema && is_page() && wp_get_post_parent_id( get_the_ID() ) ) {
 		echo '<script type="application/ld+json">' . "\n" . wp_unslash( $service_schema ) . "\n" . '</script>';
@@ -193,8 +193,7 @@ defined( 'ABSPATH' ) || exit;
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>
-	<?php understrap_body_attributes(); ?>>
+<body <?php body_class(); ?>>
 	<?php
 	if ( ! is_user_logged_in() && strpos( get_home_url(), 'staging' ) === false ) {
 		if ( get_field( 'gtm_property', 'options' ) ) {
@@ -209,7 +208,7 @@ defined( 'ABSPATH' ) || exit;
 	}
 	do_action( 'wp_body_open' );
 	?>
-<header id="wrapper-navbar" class="fixed-top" itemscope itemtype="http://schema.org/WebSite">
+<header id="wrapper-navbar" class="fixed-top">
 	<nav class="navbar navbar-expand-lg navbar-light bg-white" aria-label="Main Navigation">
 		<div class="container">
 			<a href="/" class="navbar-brand logo" aria-label="Tidy Solutions Homepage"></a>
