@@ -19,6 +19,23 @@ function acf_blocks() {
 
 		acf_register_block_type(
 			array(
+				'name'            => 'lc_breadcrumbs',
+				'title'           => __( 'LC Breadcrumbs' ),
+				'category'        => 'layout',
+				'icon'            => 'arrow-right-alt',
+				'render_template' => 'blocks/lc-breadcrumbs.php',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'mode'      => false,
+					'anchor'    => false,
+					'className' => true,
+					'align'     => false,
+				),
+			)
+		);
+
+		acf_register_block_type(
+			array(
 				'name'            => 'lc_who_grid',
 				'title'           => __( 'LC Who Grid' ),
 				'category'        => 'layout',

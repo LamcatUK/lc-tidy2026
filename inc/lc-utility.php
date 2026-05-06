@@ -734,6 +734,49 @@ function convert_to_fa_list( $content, $icon_class = 'fa-check' ) {
 }
 
 /**
+ * Build a breadcrumb trail from the current page's post_parent ancestry.
+ *
+ * Returns an array of crumbs, each with keys: label, url, current (bool).
+ * Order: Home → … ancestors … → current page.
+ *
+ * @return array<int, array{label: string, url: string, current: bool}>
+ */
+function lc_breadcrumbs_from_ancestry(): array {
+	$post = get_post();
+	if ( ! $post ) {
+		return array();
+	}
+
+	$crumbs = array();
+
+	// Home.
+	$crumbs[] = array(
+		'label'   => __( 'Home', 'lc-tidy2026' ),
+		'url'     => home_url( '/' ),
+		'current' => false,
+	);
+
+	// Ancestors (get_post_ancestors returns closest-first; we want root-first).
+	$ancestor_ids = array_reverse( get_post_ancestors( $post ) );
+	foreach ( $ancestor_ids as $ancestor_id ) {
+		$crumbs[] = array(
+			'label'   => get_the_title( $ancestor_id ),
+			'url'     => get_permalink( $ancestor_id ),
+			'current' => false,
+		);
+	}
+
+	// Current page.
+	$crumbs[] = array(
+		'label'   => get_the_title( $post ),
+		'url'     => get_permalink( $post ),
+		'current' => true,
+	);
+
+	return $crumbs;
+}
+
+/**
  * Disable Contact Form 7 autop (no <p>/<br> wrapping).
  */
 add_filter(

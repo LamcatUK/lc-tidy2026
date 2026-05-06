@@ -30,7 +30,7 @@ $img = get_the_post_thumbnail_url( get_the_ID(), 'full' ) ?? null;
         </section>
         <div class="row g-4 pb-4">
             <div class="col-lg-9 blog__content">
-                <h1 class="blog__title has-purple-400-color mb-3">
+                <h1 class="blog__title mb-3">
                     <?= esc_html( get_the_title() ); ?></h1>
                 <div class="news__meta d-flex align-items-center fs-300 mb-2">
                     <div>Posted on <?= esc_html( $the_date ); ?></div>
@@ -66,7 +66,7 @@ $img = get_the_post_thumbnail_url( get_the_ID(), 'full' ) ?? null;
                 );
                 if ( $r->have_posts() ) {
                     ?>
-                    <h3 class="has-purple-400-color">Related Insights</h3>
+                    <h3 class="">Related Insights</h3>
                     <?php
                     while ( $r->have_posts() ) {
                         $r->the_post();

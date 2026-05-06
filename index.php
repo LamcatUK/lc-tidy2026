@@ -46,7 +46,7 @@ get_header();
                                 <?= get_the_post_thumbnail( get_the_ID(), 'large', array( 'class' => 'news__img' ) ); ?>
                             </div>
                             <div class="col-md-9">
-                                <h2 class="fs-600 has-purple-400-color mb-2">
+                                <h2 class="fs-600 mb-2">
                                     <?= esc_html( get_the_title() ); ?>
                                 </h2>
                                 <div class="news__meta d-flex align-items-center fs-300">

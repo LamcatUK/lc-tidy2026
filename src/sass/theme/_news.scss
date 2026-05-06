@@ -18,7 +18,7 @@
     color: var(--col-black);
     &:hover {
       h3 {
-        color: var(--col-purple-400);
+        color: var(--col-black);
       }
     }
   }
@@ -82,7 +82,7 @@
         transform: scale(1.05);
       }
     }
-    border-bottom: 1px solid hsl(var(--hsl-purple-400) / 0.5);
+    border-bottom: 1px solid hsl(0 0 0 / 0.5);
   }
 
   &__image {

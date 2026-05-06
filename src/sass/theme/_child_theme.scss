@@ -44,10 +44,10 @@ a {
 }
 
 main a:not([class]) {
-  color: var(--col-purple-400);
-  font-weight: var(--fw-600);
+  color: var(--col-black);
+  font-weight: var(--fw-semibold);
   &:hover {
-    color: var(--col-purple-900);
+    color: var(--col-black);
   }
 }
 
