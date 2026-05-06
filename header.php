@@ -134,6 +134,10 @@ defined( 'ABSPATH' ) || exit;
 	</script>
 		<?php
 	}	
+	$service_schema = get_field( 'schema' );
+	if ( $service_schema && is_page() && wp_get_post_parent_id( get_the_ID() ) ) {
+		echo '<script type="application/ld+json">' . "\n" . wp_unslash( $service_schema ) . "\n" . '</script>';
+	}
 	if ( ! is_user_logged_in() && strpos( get_home_url(), 'staging' ) === false ) {
 		if ( get_field( 'ga_property', 'options' ) ) {
 			?>
