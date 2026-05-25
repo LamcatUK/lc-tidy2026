@@ -26,7 +26,10 @@ $fg = ! empty( $block['textColor'] ) ? 'has-' . $block['textColor'] . '-color' :
 				<div class="service-list__icon-wrapper">
 					<img src="<?= esc_url( get_sub_field( 'icon' )['url'] ); ?>" alt="<?= esc_attr( get_sub_field( 'icon' )['alt'] ); ?>" class="service-list__icon">
 				</div>
-				<h3 class="service-list__item-title has-600-font-size mb-0"><?= esc_html( $l['title'] ); ?></h3>
+				<div class="service-list__text">
+					<h3 class="service-list__item-title has-600-font-size mb-0"><?= esc_html( $l['title'] ); ?></h3>
+					<div><?= wp_kses_post( get_sub_field( 'text' ) ); ?></div>
+				</div>
 			</a>
 				<?php
 			}
