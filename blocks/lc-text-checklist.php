@@ -57,5 +57,8 @@ $extra      = $block['className'] ?? '';
 		<div class="text-center py-4">
 			<?= wp_kses_post( get_field( 'outro' ) ); ?>
 		</div>
+			<?php
+		}
+		?>
 	</div>
 </section>
