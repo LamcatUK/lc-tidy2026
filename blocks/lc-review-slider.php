@@ -11,6 +11,8 @@ defined( 'ABSPATH' ) || exit;
 	<div class="container-xl">
 		<h2 class="has-white-color">What Our Customers Say</h2>
 		<div class="has-light-800-color mb-4">From single-item collections to full property clearances, our work speaks for itself. Here’s feedback from customers across the island.</div>
+		<div class="row">
+			<div class="col-md-9">
 		<div class="review_slider__slider">
 			<div class="swiper-wrapper">
 			<?php
@@ -31,6 +33,13 @@ defined( 'ABSPATH' ) || exit;
 			}
 			wp_reset_postdata();
 			?>
+			</div>
+		</div>
+			</div>
+			<div class="col-md-3">
+				<div class="review_slider__shortcode">
+					<?= do_shortcode( get_field( 'review_button_shortcode' ) ); ?>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -82,11 +91,11 @@ add_action('wp_footer', function () {
 		},
 		breakpoints: {
 			768: {
-			slidesPerView: 2,
+			slidesPerView: 1,
 			spaceBetween: 0
 			},
 			992: {
-			slidesPerView: 3,
+			slidesPerView: 2,
 			spaceBetween: 0
 			}
 		}

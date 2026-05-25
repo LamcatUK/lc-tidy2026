@@ -21,4 +21,9 @@
     font-weight: var(--fw-semibold);
     margin-bottom: 0.5em;
   }
+
+  &__shortcode {
+    text-align: center;
+    margin-block: 3rem;
+  }
 }

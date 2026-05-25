@@ -22628,6 +22628,10 @@ footer .colophon a {
   font-weight: var(--fw-semibold);
   margin-bottom: 0.5em;
 }
+.review_slider__shortcode {
+  text-align: center;
+  margin-block: 3rem;
+}
 
 .form-block {
   background: #f2f1ed;
