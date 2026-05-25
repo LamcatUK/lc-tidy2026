@@ -22732,7 +22732,7 @@ footer .colophon a {
 
 .how-stack {
   overflow: hidden;
-  border-bottom: 1px solid var(--col-dark-800);
+  border-bottom: 1px solid var(--col-dark-600);
 }
 .how-stack__number {
   opacity: 0.8;
