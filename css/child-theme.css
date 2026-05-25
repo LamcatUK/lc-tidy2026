@@ -22794,6 +22794,9 @@ footer .colophon a {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+.who-grid__item {
+  color: var(--col-dark-900);
+}
 .who-grid__item:not(:last-child) {
   border-bottom: 1px solid var(--col-dark-400);
 }
@@ -22942,7 +22945,7 @@ html {
 
 body {
   background-color: var(--col-light-300);
-  color: var(--col-black);
+  color: var(--col-dark-900);
   overflow-x: hidden;
 }
 

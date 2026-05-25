@@ -16,8 +16,22 @@ defined( 'ABSPATH' ) || exit;
 			<?php
 			while ( have_rows( 'items' ) ) {
 				the_row();
-				$l = get_sub_field( 'item' );
-				?>
+				$l   = get_sub_field( 'item' );
+				$ll  = get_sub_field( 'link' );
+				$url = is_array($ll) && isset($ll['url']) ? $ll['url'] : '';
+
+				if ( $url ) {
+					?>
+			<a class="who-grid__item" href="<?= esc_url( $url ); ?>">
+				<div class="who-grid__icon-wrapper">
+					<img src="<?= esc_url( get_sub_field( 'icon' )['url'] ); ?>" alt="<?= esc_attr( get_sub_field( 'icon' )['alt'] ); ?>" class="who-grid__icon">
+				</div>
+				<h3 class="who-grid__item-title has-600-font-size mb-0"><?= esc_html( get_sub_field( 'title' ) ); ?></h3>
+				<div class="who-grid__item-description"><?= esc_html( get_sub_field( 'description' ) ); ?></div>
+			</a>
+					<?php
+				} else {
+					?>
 			<div class="who-grid__item">
 				<div class="who-grid__icon-wrapper">
 					<img src="<?= esc_url( get_sub_field( 'icon' )['url'] ); ?>" alt="<?= esc_attr( get_sub_field( 'icon' )['alt'] ); ?>" class="who-grid__icon">
@@ -25,7 +39,8 @@ defined( 'ABSPATH' ) || exit;
 				<h3 class="who-grid__item-title has-600-font-size mb-0"><?= esc_html( get_sub_field( 'title' ) ); ?></h3>
 				<div class="who-grid__item-description"><?= esc_html( get_sub_field( 'description' ) ); ?></div>
 			</div>
-				<?php
+					<?php
+				}
 			}
 			?>
 		</div>

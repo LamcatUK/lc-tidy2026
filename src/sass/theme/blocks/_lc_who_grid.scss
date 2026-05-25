@@ -13,6 +13,8 @@
   }
 
   &__item {
+    color: var(--col-dark-900);
+
     &:not(:last-child) {
       border-bottom: 1px solid var(--col-dark-400);
     }
