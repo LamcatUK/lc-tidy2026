@@ -1,0 +1,27 @@
+.lc-social-proof {
+  padding-block: 0.5rem;
+  border-top: 2px solid var(--col-dark-500);
+  border-bottom: 2px solid var(--col-dark-500);
+  &__inner {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: nowrap;
+    @media (max-width: 991.98px) {
+      flex-wrap: wrap;
+    }
+  }
+  &__stars {
+    flex: 0 0 auto;
+    min-width: 7.5em; // 5 stars * 1.5em each (adjust as needed)
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__content {
+    margin-left: 1rem;
+  }
+}

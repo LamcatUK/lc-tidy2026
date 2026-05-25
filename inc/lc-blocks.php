@@ -19,6 +19,28 @@ function acf_blocks() {
 
 		acf_register_block_type(
 			array(
+				'name'            => 'lc_social_proof',
+				'title'           => __( 'LC Social Proof' ),
+				'category'        => 'layout',
+				'icon'            => 'cover-image',
+				'render_template' => 'blocks/lc-social-proof.php',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'mode'      => false,
+					'anchor'    => true,
+					'className' => true,
+					'align'     => true,
+					'color'     => array(
+						'gradients'  => false,
+						'text'       => true,
+						'background' => true,
+					),
+				),
+			)
+		);
+
+		acf_register_block_type(
+			array(
 				'name'            => 'lc_other_services',
 				'title'           => __( 'LC Other Services' ),
 				'category'        => 'layout',
