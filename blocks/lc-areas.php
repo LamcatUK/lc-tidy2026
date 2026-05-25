@@ -24,6 +24,9 @@ $extra      = $block['className'] ?? '';
 				<h2><?php the_field( 'title' ); ?></h2>
 				<div class="has-600-font-size mb-4"><?php the_field( 'intro' ); ?></div>
 				<?php lc_render_areas_we_cover_from_taxonomy(); ?>
+				<div class="mt-4">
+					<a href="/areas/" class="button button--outline">See the areas we cover</a>
+				</div>
 			</div>
 		</div>
 	</div>

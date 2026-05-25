@@ -26,7 +26,7 @@
   font-size: var(--fs-300);
   font-weight: var(--fw-semibold);
   text-transform: uppercase;
-  padding: 0.25rem 1.5rem;
+  padding: 0.25rem 1.5rem 0.5rem 1.5rem;
   color: var(--col-dark-900);
   border: 2px solid var(--col-primary-600);
   transition:
@@ -61,6 +61,7 @@
 
 .button--lg {
   font-size: var(--fs-400);
+  padding: 0.25rem 1.5rem;
 }
 .button--outline {
   background-color: transparent;

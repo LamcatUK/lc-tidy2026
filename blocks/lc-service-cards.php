@@ -64,5 +64,8 @@ $block_intro = get_field( 'intro' ) ? get_field( 'intro' ) : '';
 			}
 			?>
 		</div>
+		<div class="text-center mt-4">
+			<a href="/how-it-works/" class="button button--primary">See how it works</a>
+		</div>
 	</div>
 </section>
