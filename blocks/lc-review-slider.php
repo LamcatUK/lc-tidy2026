@@ -38,6 +38,16 @@ defined( 'ABSPATH' ) || exit;
 			</div>
 			<div class="col-md-3">
 				<div class="review_slider__shortcode">
+					<div class="review_slider__preamble">
+						<div class="review_slider__stars">
+							<span class="fa fa-star"></span>
+							<span class="fa fa-star"></span>
+							<span class="fa fa-star"></span>
+							<span class="fa fa-star"></span>
+							<span class="fa fa-star"></span>
+						</div>
+						<div>Rated 5 stars on Google</div>
+					</div>
 					<?= do_shortcode( get_field( 'review_button_shortcode' ) ); ?>
 				</div>
 			</div>

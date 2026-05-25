@@ -22628,6 +22628,15 @@ footer .colophon a {
   font-weight: var(--fw-semibold);
   margin-bottom: 0.5em;
 }
+.review_slider__preamble {
+  color: var(--col-light-300);
+  margin-bottom: 0.75rem;
+  font-weight: var(--fw-semibold);
+}
+.review_slider__stars {
+  color: var(--col-primary-500);
+  margin-top: 1rem;
+}
 .review_slider__shortcode {
   text-align: center;
   margin-block: 3rem;

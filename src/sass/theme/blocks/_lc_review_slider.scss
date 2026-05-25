@@ -22,6 +22,16 @@
     margin-bottom: 0.5em;
   }
 
+  &__preamble {
+    color: var(--col-light-300);
+    margin-bottom: 0.75rem;
+    font-weight: var(--fw-semibold);
+  }
+  &__stars {
+    color: var(--col-primary-500);
+    margin-top: 1rem;
+  }
+
   &__shortcode {
     text-align: center;
     margin-block: 3rem;
