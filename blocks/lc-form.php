@@ -18,7 +18,7 @@ $extra      = $block['className'] ?? '';
 <section class="form-block <?= esc_attr( trim( $bg . ' ' . $fg . ' ' . $extra ) ); ?>" id="<?= esc_attr( $section_id ); ?>">
 	<div class="container">
 		<div class="has-600-font-size mb-4">
-			<p>Call us on <?=  do_shortcode( '[contact_phone]' ) ?>, email <?= do_shortcode( '[contact_email]' ) ?>, or message on <?= do_shortcode( '[whatsapp_link]' ) ?>.</p>
+			<p class="mb-3">Call us on <?=  do_shortcode( '[contact_phone]' ) ?>, or message on <?= do_shortcode( '[whatsapp_link]' ) ?>.</p>
 			<p>Prefer not to call? Fill in the form below and we’ll get back to you fast.</p>
 		</div>
 		<div class="form-card">
