@@ -18,7 +18,7 @@ $extra      = $block['className'] ?? '';
 <a id="<?= esc_attr( $section_id ); ?>" class="anchor"></a>
 <section class="areas <?= esc_attr( trim( $bg . ' ' . $fg ) ); ?>">
 	<div class="container <?= esc_attr( trim( $extra ) ); ?>">
-		<img src="<?= esc_url( get_stylesheet_directory_uri() . '/img/temp-map-4.png' ); ?>" class="areas__map" alt="" loading="lazy">
+		<img src="<?= esc_url( get_stylesheet_directory_uri() . '/img/map.png' ); ?>" class="areas__map" alt="" loading="lazy">
 		<div class="row">
 			<div class="col-md-7">
 				<h2><?php the_field( 'title' ); ?></h2>
