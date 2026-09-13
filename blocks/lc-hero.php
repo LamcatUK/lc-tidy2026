@@ -7,6 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
+$alt = get_field( 'image' )['alt'] ?? get_field( 'title' );
 ?>
 <section class="hero">
 	<div class="container">
@@ -16,7 +17,19 @@ defined( 'ABSPATH' ) || exit;
 				<p class="has-700-font-size	mb-5"><?php the_field( 'intro' ); ?></p>
 			</div>
 			<div class="col-md-6 my-auto mb-4">
-				<?= wp_get_attachment_image( get_field( 'image' ), 'full', false, array( 'class' => 'hero__image', 'loading' => 'eager', 'fetchpriority' => 'high' ) ); ?>
+				<?=
+				wp_get_attachment_image(
+					get_field( 'image' ),
+					'full',
+					false,
+					array(
+						'class'         => 'hero__image',
+						'loading'       => 'eager',
+						'fetchpriority' => 'high',
+						'alt'           => esc_attr( $alt ),
+					)
+				);
+				?>
 			</div>
 			<?php
 			$usps = get_field( 'usps' );
@@ -33,11 +46,11 @@ defined( 'ABSPATH' ) || exit;
 					$parts = explode( ':', $usp, 2 );
 					if ( count( $parts ) === 2 ) {
 						$icon = trim( $parts[0] );
-						$term = trim( $parts[1] );
+						$desc = trim( $parts[1] );
 						?>
 				<div>
 					<i class="fa-solid <?= esc_attr( $icon ); ?>"></i>
-						<?= esc_html( $term ); ?>
+						<?= esc_html( $desc ); ?>
 				</div>
 						<?php
 					}
@@ -52,10 +65,10 @@ defined( 'ABSPATH' ) || exit;
 			if ( ! $hide_on_contact && ! $hide_on_thank_you ) {
 				?>
 			<div class="col-12 pt-4 d-flex flex-wrap justify-content-center gap-4">
-				<a class="button button--lg d-none d-sm-inline-block" href="tel:<?= parse_phone( get_field( 'contact_phone', 'option' ) ); ?>"><i class="fa-solid fa-phone me-2"></i> Call <?= get_field( 'contact_phone', 'option' ); ?></a>
-				<a class="button button--lg d-sm-none" href="tel:<?= parse_phone( get_field( 'contact_phone', 'option' ) ); ?>"><i class="fa-solid fa-phone me-2"></i> Call Now</a>
-				<?= do_shortcode( '[whatsapp_link class="d-sm-none button button--lg has-whatsapp-background-color" icon=true text="WhatsApp Us"]'); ?>
-				<!-- <a class="button button--lg" href="mailto:<?= antispambot( get_field( 'contact_email', 'option' ) ); ?>"><i class="fa-solid fa-envelope me-2"></i> Email Us</a> -->
+				<a class="button button--lg d-none d-sm-inline-block" href="tel:<?= esc_attr( parse_phone( get_field( 'contact_phone', 'option' ) ) ); ?>"><i class="fa-solid fa-phone me-2"></i> Call <?= esc_html( get_field( 'contact_phone', 'option' ) ); ?></a>
+				<a class="button button--lg d-sm-none" href="tel:<?= esc_attr( parse_phone( get_field( 'contact_phone', 'option' ) ) ); ?>"><i class="fa-solid fa-phone me-2"></i> Call Now</a>
+				<?= do_shortcode( '[whatsapp_link class="d-sm-none button button--lg has-whatsapp-background-color" icon=true text="WhatsApp Us"]' ); ?>
+				<a class="button button--lg" href="mailto:<?= esc_attr( antispambot( get_field( 'contact_email', 'option' ) ) ); ?>"><i class="fa-solid fa-envelope me-2"></i> Email Us</a>
 				<a class="button button--lg button--outline" href="/contact/">Get a Free Quote</a>
 			</div>
 				<?php

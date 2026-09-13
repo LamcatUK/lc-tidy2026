@@ -25,8 +25,8 @@ defined( 'ABSPATH' ) || exit;
 				?>
 				<div class="review_slider__slide swiper-slide">
 					<div class="review_slider__card">
-						<div class="review_slider__title has-600-font-size has-white-color"><?= get_the_title(); ?>, <span class="has-primary-500-color"><?= get_field('location', get_the_ID()); ?></div>
-						<div class="review_slider__review has-400-font-size has-light-800-color"><?= get_the_content(); ?></div>
+						<div class="review_slider__title has-600-font-size has-white-color"><?= esc_html( get_the_title() ); ?>, <span class="has-primary-500-color"><?= esc_html( get_field('location', get_the_ID()) ); ?></span></div>
+						<div class="review_slider__review has-400-font-size has-light-800-color"><?= wp_kses_post( get_the_content() ); ?></div>
 					</div>
 				</div>
 				<?php

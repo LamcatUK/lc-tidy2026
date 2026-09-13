@@ -39,14 +39,21 @@ defined( 'ABSPATH' ) || exit;
 	"url": "https://tidysolutions.im/",
 	"telephone": "+44 7624 251166",
 	"email": "info@tidysolutions.im",
+	"priceRange": "££",
 	"address": {
 		"@type": "PostalAddress",
 		"addressLocality": "Isle of Man",
 		"addressCountry": "IM"
 	},
+	"openingHours": "Mo-Fr 08:00-17:00",
 	"areaServed": {
 		"@type": "AdministrativeArea",
 		"name": "Isle of Man"
+	},
+	"aggregateRating": {
+		"@type": "AggregateRating",
+		"ratingValue": "5",
+		"reviewCount": "3"
 	},
 	"sameAs": [
 		"https://www.facebook.com/profile.php?id=61588068492366"
@@ -136,7 +143,10 @@ defined( 'ABSPATH' ) || exit;
 	}
 	$service_schema = get_field( 'schema' );
 	if ( $service_schema && is_page() && wp_get_post_parent_id( get_the_ID() ) ) {
-		echo '<script type="application/ld+json">' . "\n" . wp_unslash( $service_schema ) . "\n" . '</script>';
+		$decoded_schema = json_decode( wp_unslash( $service_schema ), true );
+		if ( is_array( $decoded_schema ) && JSON_ERROR_NONE === json_last_error() ) {
+			echo '<script type="application/ld+json">' . wp_json_encode( $decoded_schema, JSON_UNESCAPED_UNICODE ) . '</script>';
+		}
 	}
 	if ( ! is_user_logged_in() && strpos( get_home_url(), 'staging' ) === false ) {
 		if ( get_field( 'ga_property', 'options' ) ) {

@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) || exit;
 			while ( have_rows( 'benefits' ) ) {
 				the_row();
 				?>
-			<div class="benefit" data-aos="fade" data-aos-delay="<?= get_row_index() * 200; ?>">
+			<div class="benefit" data-aos="fade" data-aos-delay="<?= esc_attr( get_row_index() * 200 ); ?>">
 				<div class="benefit__icon-wrapper">
 					<img src="<?= esc_url( get_sub_field( 'icon' )['url'] ); ?>" alt="<?= esc_attr( get_sub_field( 'icon' )['alt'] ); ?>" class="benefit__icon" loading="lazy">
 				</div>
