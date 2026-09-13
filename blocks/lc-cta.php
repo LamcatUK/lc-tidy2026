@@ -23,7 +23,7 @@ defined( 'ABSPATH' ) || exit;
 				<a class="button button--lg w-100 text-center d-none d-sm-inline-block" href="tel:<?= esc_attr( parse_phone( get_field( 'contact_phone', 'option' ) ) ); ?>"><i class="fa-solid fa-phone me-2"></i> Call <?= esc_html( get_field( 'contact_phone', 'option' ) ); ?></a>
 				<a class="button button--lg w-100 text-center d-sm-none" href="tel:<?= esc_attr( parse_phone( get_field( 'contact_phone', 'option' ) ) ); ?>"><i class="fa-solid fa-phone me-2"></i> Call Now</a>
 				<?= do_shortcode( '[whatsapp_link class="d-sm-none button button--lg has-whatsapp-background-color" icon=true text="WhatsApp Us"]' ); ?>
-				<a class="button button--lg w-100 text-center" href="mailto:<?= esc_attr( antispambot( get_field( 'contact_email', 'option' ) ) ); ?>"><i class="fa-solid fa-envelope me-2"></i> Email Us</a>
+				<!-- <a class="button button--lg w-100 text-center" href="mailto:<?= esc_attr( antispambot( get_field( 'contact_email', 'option' ) ) ); ?>"><i class="fa-solid fa-envelope me-2"></i> Email Us</a> -->
 				<a class="button button--lg button--outline button--outline-white w-100 text-center" href="/contact/">Get a Free Quote</a>
 			</div>
 		</div>
