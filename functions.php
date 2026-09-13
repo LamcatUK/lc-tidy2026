@@ -56,9 +56,12 @@ function lc_enqueue_theme_js() {
         wp_enqueue_script(
             'lc-theme-js',
             get_stylesheet_directory_uri() . $rel,
-            array(),
+            array( 'aos' ),
             filemtime( $abs ),
-            true
+            array(
+                'strategy'  => 'defer',
+                'in_footer' => true,
+            )
         );
     }
 }

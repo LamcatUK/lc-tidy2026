@@ -269,11 +269,34 @@ function lc_theme_enqueue() {
     // phpcs:enable
 	wp_deregister_script( 'jquery' );
 
-    wp_enqueue_style('aos-style', "https://unpkg.com/aos@2.3.1/dist/aos.css", array());
-    wp_enqueue_script('aos', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array(), null, true);
+	// Self-hosted (was unpkg.com) so there's no third-party DNS/connect hop
+	// on the critical path, and to allow deferring below.
+	wp_enqueue_style( 'aos-style', get_stylesheet_directory_uri() . '/css/aos.css', array(), '2.3.1' );
+	wp_style_add_data( 'aos-style', 'lc-defer', true );
 
-	wp_enqueue_script( 'lenis', 'https://unpkg.com/lenis@1.3.11/dist/lenis.min.js', array(), null, true ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
-	wp_enqueue_style( 'lenis-style', 'https://unpkg.com/lenis@1.3.11/dist/lenis.css', array() ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
+	wp_enqueue_script(
+		'aos',
+		get_stylesheet_directory_uri() . '/js/aos.js',
+		array(),
+		'2.3.1',
+		array(
+			'strategy'  => 'defer',
+			'in_footer' => true,
+		)
+	);
+
+	// lenis.css is inlined into child-theme.css (see src/sass/theme/_child_theme.scss)
+	// instead of loading it as a second render-blocking stylesheet.
+	wp_enqueue_script(
+		'lenis',
+		get_stylesheet_directory_uri() . '/js/lenis.min.js',
+		array(),
+		'1.3.11',
+		array(
+			'strategy'  => 'defer',
+			'in_footer' => true,
+		)
+	);
 
 	wp_enqueue_style( 'swiper', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css', array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
 	wp_enqueue_script( 'swiper', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js', array(), null, true ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
@@ -283,6 +306,24 @@ function lc_theme_enqueue() {
 }
 add_action( 'wp_enqueue_scripts', 'lc_theme_enqueue' );
 
+/**
+ * Load stylesheets marked with the 'lc-defer' data flag as non-render-blocking,
+ * via the standard preload + swap-on-load pattern, with a <noscript> fallback.
+ *
+ * @param string $html   The link tag HTML.
+ * @param string $handle The stylesheet's registered handle.
+ * @return string
+ */
+function lc_defer_style_loader_tag( $html, $handle ) {
+	if ( ! wp_styles()->get_data( $handle, 'lc-defer' ) ) {
+		return $html;
+	}
+
+	$deferred = preg_replace( '/rel=([\'"])stylesheet\1/', 'rel=$1preload$1 as=$1style$1 onload="this.onload=null;this.rel=\'stylesheet\'"', $html, 1 );
+
+	return $deferred . '<noscript>' . $html . '</noscript>';
+}
+add_filter( 'style_loader_tag', 'lc_defer_style_loader_tag', 10, 2 );
 
 /**
  * Retrieves a child area page by its slug under the 'areas' parent page.
@@ -363,7 +404,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	}
 );
 
-// append items to wordpress menu mobile navigation
+// append items to wordpress menu mobile navigation.
 add_filter(
 	'wp_nav_menu_items',
 	function ( $items, $args ) {
