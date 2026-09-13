@@ -46,10 +46,16 @@ defined( 'ABSPATH' ) || exit;
 		"addressCountry": "IM"
 	},
 	"openingHours": "Mo-Fr 08:00-17:00",
-	"areaServed": {
-		"@type": "AdministrativeArea",
-		"name": "Isle of Man"
-	},
+	"areaServed": [
+		{ "@type": "AdministrativeArea", "name": "Isle of Man" },
+		{ "@type": "City", "name": "Douglas" },
+		{ "@type": "City", "name": "Ramsey" },
+		{ "@type": "City", "name": "Peel" },
+		{ "@type": "City", "name": "Castletown" },
+		{ "@type": "City", "name": "Onchan" },
+		{ "@type": "City", "name": "Port Erin" },
+		{ "@type": "City", "name": "Laxey" }
+	],
 	"aggregateRating": {
 		"@type": "AggregateRating",
 		"ratingValue": "5",
