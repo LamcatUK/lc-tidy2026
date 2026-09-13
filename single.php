@@ -73,7 +73,7 @@ $img = get_the_post_thumbnail_url( get_the_ID(), 'full' ) ?? null;
                         ?>
                         <a class="related__card d-block mb-3"
                             href="<?= esc_url( get_the_permalink() ); ?>">
-                            <?= get_the_post_thumbnail( get_the_ID(), 'small', array( 'class' => 'related__image' ) ); ?>
+                            <?= get_the_post_thumbnail( get_the_ID(), 'small', array( 'class' => 'related__image', 'loading' => 'lazy' ) ); ?>
                             <div class="fs-300"><?= get_the_date( 'jS F, Y' ); ?></div>
                             <h3 class="fs-500 fw-600">
                                 <?= esc_html( get_the_title() ); ?></h3>

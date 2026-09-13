@@ -24,7 +24,7 @@ $fg = ! empty( $block['textColor'] ) ? 'has-' . $block['textColor'] . '-color' :
 				?>
 			<a class="service-list__item" href="<?= esc_url( $l['url'] ); ?>">
 				<div class="service-list__icon-wrapper">
-					<img src="<?= esc_url( get_sub_field( 'icon' )['url'] ); ?>" alt="<?= esc_attr( get_sub_field( 'icon' )['alt'] ); ?>" class="service-list__icon">
+					<img src="<?= esc_url( get_sub_field( 'icon' )['url'] ); ?>" alt="<?= esc_attr( get_sub_field( 'icon' )['alt'] ); ?>" class="service-list__icon" loading="lazy">
 				</div>
 				<div class="service-list__text">
 					<h3 class="service-list__item-title has-600-font-size mb-0"><?= esc_html( $l['title'] ); ?></h3>

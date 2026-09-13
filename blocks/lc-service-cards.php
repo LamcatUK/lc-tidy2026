@@ -45,7 +45,7 @@ $block_intro = get_field( 'intro' ) ? get_field( 'intro' ) : '';
 				}
 				?>
 					<div class="service-card__icon-wrapper">
-						<img src="<?= esc_url( get_sub_field( 'icon' )['url'] ); ?>" alt="<?= esc_attr( get_sub_field( 'icon' )['alt'] ); ?>" class="service-card__icon">
+						<img src="<?= esc_url( get_sub_field( 'icon' )['url'] ); ?>" alt="<?= esc_attr( get_sub_field( 'icon' )['alt'] ); ?>" class="service-card__icon" loading="lazy">
 					</div>
 					<h3 class="service-card__title has-600-font-size has-white-color"><?= esc_html( get_sub_field( 'title' ) ); ?></h3>
 					<p class="service-card__text has-400-font-size has-light-800-color mb-0"><?= esc_html( get_sub_field( 'text' ) ); ?></p>

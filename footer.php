@@ -15,7 +15,7 @@ defined( 'ABSPATH' ) || exit;
 		<div class="row g-4 mb-4">
 			<div class="col-lg-3 text-center text-lg-start">
 				<img src="<?= esc_url( get_stylesheet_directory_uri() . '/img/tidy-solutions-logo--wh.svg' ); ?>"
-					width=270 height=74 class="footer__logo" alt="Tidy Solutions Logo">
+					width=270 height=74 class="footer__logo" alt="Tidy Solutions Logo" loading="lazy">
 			</div>
 			<div class="col-sm-6 col-lg-6 text-center mx-auto text-lg-start">
 				<?php

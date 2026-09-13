@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) || exit;
 				<p class="has-700-font-size	mb-5"><?php the_field( 'intro' ); ?></p>
 			</div>
 			<div class="col-md-6 my-auto mb-4">
-				<?= wp_get_attachment_image( get_field( 'image' ), 'full', false, array( 'class' => 'hero__image' ) ); ?>
+				<?= wp_get_attachment_image( get_field( 'image' ), 'full', false, array( 'class' => 'hero__image', 'loading' => 'eager', 'fetchpriority' => 'high' ) ); ?>
 			</div>
 			<?php
 			$usps = get_field( 'usps' );
